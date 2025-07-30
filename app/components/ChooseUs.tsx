@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
           >
             <h2 className="text-4xl font-bold mb-4">Why Choose Us</h2>
             <p className="text-gray-300 text-lg mb-8 max-w-md">
-              We specialize in software development, hosting, and SEO. We've helped bring ideas to life with sustainable business practices across industries.
+              We specialize in software development, hosting, and SEO. We&rsquo;ve helped bring ideas to life with sustainable business practices across industries.
             </p>
             <Link
               href="/contact"
