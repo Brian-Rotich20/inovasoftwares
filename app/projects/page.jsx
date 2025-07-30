@@ -83,45 +83,42 @@ export default function Projects() {
               className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg group cursor-pointer"
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
-              <Link href={`/projects/${project.slug}`}>
-                <div className="relative h-64 sm:h-72 md:h-80 lg:h-64 xl:h-72">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-contain sm:object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="100vw"
-                  />
+              <div className="group border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative h-64 sm:h-72 md:h-80 lg:h-64 xl:h-72">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-contain sm:object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="100vw"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 highlight group-hover:text-[#FFD700] transition-colors">{project.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">{project.description}</p>
+
+                <div className="flex items-center mb-4 space-x-3">
+                  {project.tech.map((icon, i) => (
+                    <div key={i} className="text-xl text-gray-600 dark:text-gray-400">
+                      {icon}
+                    </div>
+                  ))}
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 highlight group-hover:text-[#FFD700] transition-colors">{project.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">{project.description}</p>
-                  
-                  <div className="flex items-center mb-4 space-x-3">
-                    {project.tech.map((icon, i) => (
-                      <div key={i} className="text-xl text-gray-600 dark:text-gray-400">
-                        {icon}
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="flex justify-between items-center">
-                    
-                    {project.live && (
-                      <a 
-                        href={project.live} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-[#FFD700] dark:hover:text-[#FFD700] transition-colors"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <FaExternalLinkAlt />
-                        <span>Live Demo</span>
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </Link>
+
+                {project.live && (
+                  <a 
+                    href={project.live} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-[#FFD700] dark:hover:text-[#FFD700] transition-colors"
+                  >
+                    <FaExternalLinkAlt />
+                    <span>Live Demo</span>
+                  </a>
+                )}
+              </div>
+            </div>
+
             </motion.div>
           ))}
         </motion.div>
