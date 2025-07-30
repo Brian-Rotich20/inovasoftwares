@@ -88,7 +88,7 @@ export default function IndustriesWeServe() {
                 key={index}
                 className="group flex flex-col items-center p-3 md:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer"
               >
-                <div className="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-3 p-1.5 md:p-2 bg-blue-600 rounded-lg group-hover:bg-blue-500 transition-colors duration-300 flex items-center justify-center">
+                <div className="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-3 p-1.5 md:p-2 bg-yellow-600 rounded-lg group-hover:bg-yellow-500 transition-colors duration-300 flex items-center justify-center">
                   <Icon className="w-full h-full text-white" />
                 </div>
                 <h3 className="text-white font-medium text-xs md:text-sm text-center leading-tight">
@@ -103,7 +103,7 @@ export default function IndustriesWeServe() {
           <p className="text-sm md:text-base text-slate-300 mb-6 md:mb-8">
             Don't see your industry? We adapt our expertise to meet unique business needs across all sectors.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-500 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base">
+          <button className="bg-yellow-600 hover:bg-yellow-500 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base">
             Discuss Your Project
           </button>
         </div>

@@ -7,22 +7,22 @@ export default function WhyChooseUs() {
   const features = [
     {
       title: 'Fast Development',
-      icon: <Code2 className="text-blue-500 w-6 h-6 mb-2" />,
+      icon: <Code2 className="text-yellow-500 w-6 h-6 mb-2" />,
       desc: 'With vast software engineering experience, we ship your solution on time.',
     },
     {
       title: 'Quality Assurance',
-      icon: <ShieldCheck className="text-blue-500 w-6 h-6 mb-2" />,
+      icon: <ShieldCheck className="text-yellow-500 w-6 h-6 mb-2" />,
       desc: 'Our internal and external testers ensure quality and reliability.',
     },
     {
       title: 'Classic Designs',
-      icon: <Paintbrush2 className="text-blue-500 w-6 h-6 mb-2" />,
+      icon: <Paintbrush2 className="text-yellow-500 w-6 h-6 mb-2" />,
       desc: 'We craft visually appealing and user-friendly solutions.',
     },
     {
       title: 'Reduced Costs',
-      icon: <PiggyBank className="text-blue-500 w-6 h-6 mb-2" />,
+      icon: <PiggyBank className="text-yellow-500 w-6 h-6 mb-2" />,
       desc: 'We help you gain strategic advantage with low-cost solutions.',
     },
   ]
@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-blue-600 hover:bg-blue-500 text-white px-6 md:px-8 py-2.5 md:py-3 font-semibold rounded-lg transition text-sm md:text-base"
+              className="inline-block bg-yellow-600 hover:bg-yellow-500 text-white px-6 md:px-8 py-2.5 md:py-3 font-semibold rounded-lg transition text-sm md:text-base"
             >
               Schedule a Consultation
             </Link>

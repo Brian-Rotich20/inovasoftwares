@@ -1,7 +1,7 @@
 import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
 import ChooseUs from './components/ChooseUs';
-import TechStack from './components/TechStack';
+// import TechStack from './components/TechStack';
 import IndustriesWeServe from './components/IndustriesWeServe';
 export default function Home() {
   return (
@@ -9,7 +9,6 @@ export default function Home() {
     <HeroSection/>
     <ServicesSection/>
     <ChooseUs/>
-    <TechStack/>
     <IndustriesWeServe/>
     </>
   );
