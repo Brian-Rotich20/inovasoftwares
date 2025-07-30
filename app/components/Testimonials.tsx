@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -49,9 +50,11 @@ export default function Testimonials() {
               className="flex-shrink-0 w-96 bg-grey-800 rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex items-center mb-6">
-                <img
+               <Image
                   src={testimonial.avatar}
                   alt={testimonial.name}
+                  width={64} // 16 * 4
+                  height={64}
                   className="w-16 h-16 rounded-full object-cover border-4 border-blue-100"
                 />
                 <div className="ml-4">
