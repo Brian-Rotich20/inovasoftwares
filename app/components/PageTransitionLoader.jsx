@@ -11,7 +11,7 @@ export default function PageTransitionLoader() {
 
   useEffect(() => {
     setLoading(true)
-    const timer = setTimeout(() => setLoading(false), 700) // fake delay
+    const timer = setTimeout(() => setLoading(false), 1000) // fake delay
     return () => clearTimeout(timer)
   }, [pathname])
 

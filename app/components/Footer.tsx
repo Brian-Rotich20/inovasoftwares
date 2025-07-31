@@ -13,10 +13,10 @@ export default function ProfessionalFooter() {
   ]
 
   const quickLinks = [
-    { name: 'About Us', href: '#about' },
+    { name: 'About Us', href: '/about' },
     { name: 'Our Team', href: '#team' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Pricing', href: '#pricing' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Pricing', href: '/prices' },
     { name: 'Contact', href: '#contact' },
     { name: 'Blog', href: '#blog' }
   ]
@@ -38,7 +38,7 @@ export default function ProfessionalFooter() {
               </span>
             </div>
             <p className="text-slate-300 text-sm mb-4 leading-relaxed">
-              Professional software solutions that transform businesses. We specialize in cutting-edge technology to help you stay competitive in the digital world.
+              Professional software solutions that transform businesses.
             </p>
             
             {/* Trust Indicators */}
@@ -49,7 +49,7 @@ export default function ProfessionalFooter() {
               </div>
               <div className="flex items-center space-x-2 text-xs text-slate-400">
                 <Award className="w-3 h-3 text-yellow-400" />
-                <span>500+ Projects Delivered</span>
+                <span>50+ Projects Delivered</span>
               </div>
               <div className="flex items-center space-x-2 text-xs text-slate-400">
                 <Clock className="w-3 h-3 text-purple-400" />
