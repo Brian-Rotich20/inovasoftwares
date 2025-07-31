@@ -14,7 +14,7 @@ export default function PricingPage() {
   const webDevelopmentPlans = [
     {
       name: "Simple Website",
-      price: "KES 25,000",
+      price: "KES 15,000",
       period: "one-time",
       popular: false,
       description: "Perfect for small businesses and startups",
@@ -31,7 +31,7 @@ export default function PricingPage() {
     },
     {
       name: "Modern Complex",
-      price: "KES 85,000",
+      price: "KES 25,000",
       period: "one-time",
       popular: true,
       description: "Advanced solution with dashboard and analytics",
@@ -51,7 +51,7 @@ export default function PricingPage() {
     },
     {
       name: "E-commerce Platform",
-      price: "KES 120,000",
+      price: "KES 45,000",
       period: "one-time",
       popular: false,
       description: "Full-featured online store solution",
