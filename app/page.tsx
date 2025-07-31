@@ -5,7 +5,7 @@ import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
 import ChooseUs from './components/ChooseUs';
 import IndustriesWeServe from './components/IndustriesWeServe';
-
+import TrustedBy from './components/TrustedBy';
 
 
 export default function Home() {
@@ -55,6 +55,7 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <ChooseUs />
+      <TrustedBy/>
       <IndustriesWeServe />
     </>
   );

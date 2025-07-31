@@ -62,8 +62,8 @@ export default function ProfessionalNavbar() {
             {/* CTA Buttons - Desktop */}
             <div className="hidden lg:flex items-center space-x-3">
               <button className="flex items-center space-x-1 bg-slate-800 hover:bg-slate-700 text-white px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 border border-slate-600">
-                <Phone className="w-3 h-3" />
-                <span>Call Us</span>
+                
+                <span>Sign In</span>
               </button>
               <button className="flex items-center space-x-1 bg-yellow-600 hover:bg-yellow-500 text-yellow px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 shadow-lg hover:shadow-xl">
                 <span>Get Quote</span>
