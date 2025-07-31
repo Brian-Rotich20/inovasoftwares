@@ -17,8 +17,8 @@ export default function ProfessionalNavbar() {
     const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/services' },
-    { name: 'Teams', href: '/teams' },
-    { name: 'About', href: '/about' },
+    
+    // { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
     { name: 'Prices', href: '/prices' },
     { name: 'Contact', href: '/contact' },
@@ -34,7 +34,7 @@ export default function ProfessionalNavbar() {
           : 'bg-slate-900/80 backdrop-blur-sm'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className={`flex items-center justify-between h-16`}>
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
@@ -83,15 +83,11 @@ export default function ProfessionalNavbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
-     <div className={`lg:hidden transition-all duration-300 ease-in-out ${
-        isOpen 
-            ? 'h-[75vh] opacity-100 overflow-y-auto' 
-            : 'h-0 opacity-0 overflow-hidden'
+        {/* Mobile Navigation Menu - Side Drawer */}
+        <div className={`lg:hidden fixed top-16 right-0 h-[calc(100vh-4rem)] w-3/4 transform transition-transform duration-300 ease-in-out z-40 ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
-
-
-          <div className="bg-slate-800/95 backdrop-blur-lg border-t border-slate-700/50">
+          <div className="bg-slate-800/95 backdrop-blur-lg border-l border-slate-700/50 h-full overflow-y-auto">
             <div className="px-4 py-6 space-y-4">
               {/* Mobile Logo */}
               <div className="flex items-center justify-center space-x-2 pb-4 border-b border-slate-700">
@@ -118,18 +114,16 @@ export default function ProfessionalNavbar() {
               </div>
 
               {/* Mobile CTA Buttons */}
-          {/* Mobile CTA Buttons (side-by-side, small) */}
-            <div className="pt-4 flex space-x-2">
-            <button className="flex-1 flex items-center justify-center space-x-1 bg-slate-700 hover:bg-slate-600 text-white px-2 py-2 rounded-md text-xs font-medium transition-all duration-200">
-                <Phone className="w-4 h-4" />
-                <span>Call</span>
-            </button>
-            <button className="flex-1 flex items-center justify-center space-x-1 bg-yellow-600 hover:bg-yellow-500 text-white px-2 py-2 rounded-md text-xs font-medium transition-all duration-200 shadow-lg">
-                <span>Quote</span>
-                <ArrowRight className="w-4 h-4" />
-            </button>
-            </div>
-
+              <div className="pt-4 flex space-x-2">
+                <button className="flex-1 flex items-center justify-center space-x-1 bg-slate-700 hover:bg-slate-600 text-white px-2 py-2 rounded-md text-xs font-medium transition-all duration-200">
+                  <Phone className="w-4 h-4" />
+                  <span>Call</span>
+                </button>
+                <button className="flex-1 flex items-center justify-center space-x-1 bg-yellow-600 hover:bg-yellow-500 text-white px-2 py-2 rounded-md text-xs font-medium transition-all duration-200 shadow-lg">
+                  <span>Quote</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
 
               {/* Contact Info */}
               <div className="pt-4 border-t border-slate-700 text-center">
@@ -143,6 +137,14 @@ export default function ProfessionalNavbar() {
             </div>
           </div>
         </div>
+
+        {/* Overlay */}
+        {isOpen && (
+          <div 
+            className="lg:hidden fixed inset-0 bg-black/50 z-30 top-16"
+            onClick={() => setIsOpen(false)}
+          ></div>
+        )}
       </nav>
 
       {/* Spacer to prevent content from hiding behind navbar */}
