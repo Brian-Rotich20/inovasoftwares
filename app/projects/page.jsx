@@ -1,4 +1,3 @@
-
 'use client';
 
 import { motion } from 'framer-motion';
@@ -8,7 +7,7 @@ import SectionHeader from '../components/SectionHeader';
 import { fadeIn, staggerContainer } from '../libs/animations';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiDjango, SiPostgresql} from 'react-icons/si';
+import { SiNextdotjs, SiTailwindcss, SiDjango, SiPostgresql, SiTypescript} from 'react-icons/si';
 import { FaPhp, FaHtml5, FaCss3Alt, FaJs, FaBootstrap } from "react-icons/fa";
 import { SiWoocommerce, SiElementor } from 'react-icons/si';
 
@@ -21,6 +20,14 @@ export default function Projects() {
       image: '/shop2.png',
       live: 'https://frontend-shop-xi.vercel.app',
       tech: [<FaReact key="react" />, <SiNextdotjs key="next" />, <SiTailwindcss key="tailwind" />, <SiDjango key="django" />, <SiPostgresql key="postgresql"/>]
+    },
+    {
+      slug: 'tsavol-print-limited',
+      title: 'Tsavol Print Limited',
+      description: 'A professional printing services website featuring modern design, service catalog, and client portfolio showcase.',
+      image: '/tsavol.png',
+      live: 'https://www.tsavolprintlimited.co.ke/',
+      tech: [<SiTailwindcss key="tailwind" />, <SiDjango key="django" />, <SiNextdotjs key="next" />, <SiTypescript key="typescript" />, <SiPostgresql key="postgresql"/>]
     },
     {
       slug: 'inventory-management-system',
@@ -74,7 +81,7 @@ export default function Projects() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {projects.map((project, index) => (
             <motion.div
@@ -84,22 +91,22 @@ export default function Projects() {
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
               <div className="group border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <div className="relative h-64 sm:h-72 md:h-80 lg:h-64 xl:h-72">
+              <div className="relative h-48 sm:h-52 md:h-48 lg:h-44 xl:h-48">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   className="object-contain sm:object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="100vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 highlight group-hover:text-[#FFD700] transition-colors">{project.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">{project.description}</p>
+              <div className="p-4">
+                <h3 className="text-lg font-bold mb-2 highlight group-hover:text-[#FFD700] transition-colors line-clamp-1">{project.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-3 text-sm line-clamp-2">{project.description}</p>
 
-                <div className="flex items-center mb-4 space-x-3">
+                <div className="flex items-center mb-3 space-x-2 flex-wrap">
                   {project.tech.map((icon, i) => (
-                    <div key={i} className="text-xl text-gray-600 dark:text-gray-400">
+                    <div key={i} className="text-lg text-gray-600 dark:text-gray-400">
                       {icon}
                     </div>
                   ))}
@@ -110,9 +117,9 @@ export default function Projects() {
                     href={project.live} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-[#FFD700] dark:hover:text-[#FFD700] transition-colors"
+                    className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-[#FFD700] dark:hover:text-[#FFD700] transition-colors text-sm"
                   >
-                    <FaExternalLinkAlt />
+                    <FaExternalLinkAlt className="text-xs" />
                     <span>Live Demo</span>
                   </a>
                 )}

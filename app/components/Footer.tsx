@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Code, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Clock, Shield, Award } from 'lucide-react'
+import { Code, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Clock, Shield, Award } from "lucide-react"
 
 export default function ProfessionalFooter() {
   const services = [
@@ -25,10 +25,10 @@ export default function ProfessionalFooter() {
     <footer className="bg-slate-950 text-white">
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           
-          {/* Company Info */}
-          <div className="lg:col-span-1">
+          {/* Company Info - Full width on mobile */}
+          <div className="col-span-2 lg:col-span-1 mb-4 lg:mb-0">
             <div className="flex items-center space-x-2 mb-3">
               <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
                 <Code className="w-5 h-5 text-white" />
@@ -89,7 +89,7 @@ export default function ProfessionalFooter() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <h3 className="text-white font-semibold mb-3 text-base">Get In Touch</h3>
             <div className="space-y-2.5">
               <div className="flex items-start space-x-3">

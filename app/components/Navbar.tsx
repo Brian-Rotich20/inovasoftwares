@@ -1,11 +1,21 @@
+// This is for inova-softwares.com
 'use client'
 import React, { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown, Code, ArrowRight, Phone } from 'lucide-react'
+import { Menu, X, ChevronDown, Code, ArrowRight, Facebook, Instagram, Linkedin } from 'lucide-react'
+import localFont from 'next/font/local'
+
+  const logoFont = localFont({
+    src: '../fonts/mongule.ttf',
+    weight: '400',
+    style: 'normal',
+  })
 
 export default function ProfessionalNavbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
+
+  
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
@@ -37,39 +47,38 @@ export default function ProfessionalNavbar() {
           <div className={`flex items-center justify-between h-16`}>
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
-                <Code className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-white">
+              <span className={`${logoFont.className} text-2xl font-bold text-white`}>
                 Inova <span className="text-yellow-400">Softwares</span>
               </span>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-slate-300 hover:text-white font-medium transition-colors duration-200 relative group"
-                >
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              ))}
-            </div>
+              <div className="hidden lg:flex items-center space-x-8">
+                {navItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className={`${logoFont.className} text-slate-300 hover:text-white font-medium transition-colors duration-200 relative group`}
+                  >
+                    {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+                  </a>
+                ))}
+              </div>
 
-            {/* CTA Buttons - Desktop */}
-            <div className="hidden lg:flex items-center space-x-3">
-              <button className="flex items-center space-x-1 bg-slate-800 hover:bg-slate-700 text-white px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 border border-slate-600">
-                
-                <span>Sign In</span>
-              </button>
-              <button className="flex items-center space-x-1 bg-yellow-600 hover:bg-yellow-500 text-yellow px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 shadow-lg hover:shadow-xl">
-                <span>Get Quote</span>
-                <ArrowRight className="w-3 h-3" />
-              </button>
-            </div>
+
+          <div className="hidden lg:flex items-center space-x-4">
+          <a href="#" className="text-slate-400 hover:text-white transition-colors duration-200">
+            <Facebook className="w-5 h-5" />
+          </a>
+          <a href="#" className="text-slate-400 hover:text-white transition-colors duration-200">
+            <Instagram className="w-5 h-5" />
+          </a>
+          <a href="#" className="text-slate-400 hover:text-white transition-colors duration-200">
+            <Linkedin className="w-5 h-5" />
+          </a>
+        </div>
+           
 
             {/* Mobile menu button */}
             <div className="lg:hidden">
@@ -115,12 +124,8 @@ export default function ProfessionalNavbar() {
 
               {/* Mobile CTA Buttons */}
               <div className="pt-4 flex space-x-2">
-                <button className="flex-1 flex items-center justify-center space-x-1 bg-slate-700 hover:bg-slate-600 text-white px-2 py-2 rounded-md text-xs font-medium transition-all duration-200">
-                  <Phone className="w-4 h-4" />
-                  <span>Call</span>
-                </button>
                 <button className="flex-1 flex items-center justify-center space-x-1 bg-yellow-600 hover:bg-yellow-500 text-white px-2 py-2 rounded-md text-xs font-medium transition-all duration-200 shadow-lg">
-                  <span>Quote</span>
+                  <span>Get In Touch</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>

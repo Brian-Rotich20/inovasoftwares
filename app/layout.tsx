@@ -4,17 +4,27 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import localFont from 'next/font/local'
+import { Roboto } from "next/font/google";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
+const logoFont = localFont({
+  src: '/fonts/mongule.otf',
+  weight: '400',
+  style: 'normal',
+  variable: '--font-logo', // key step
+});
+
+
+const roboto = Roboto({
+  weight: ["400", "500", "700"], // adjust as needed
+  subsets: ["latin"],
+  variable: "--font-roboto",
+});
 
 export const metadata: Metadata = {
   title: 'Inova Softwares Company',
@@ -58,9 +68,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={roboto.variable}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        
       >
         <Navbar />
         <PageTransitionLoader />
