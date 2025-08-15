@@ -102,7 +102,7 @@ export default function ProfessionalFooter() {
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-yellow-400 flex-shrink-0" />
                 <a href="tel:+254700000000" className="text-slate-300 hover:text-blue-400 text-sm transition-colors">
-                  +254 700 000 000
+                  +254 720 060 728
                 </a>
               </div>
               <div className="flex items-center space-x-3">
