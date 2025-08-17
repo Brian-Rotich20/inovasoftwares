@@ -6,10 +6,12 @@ import ServicesSection from './components/ServicesSection';
 import ChooseUs from './components/ChooseUs';
 import IndustriesWeServe from './components/IndustriesWeServe';
 import { HeroSection1 } from './components/HeroSection1';
+import { LoadingWrapper } from "./loading-wrapper";
 
 export default function Home() {
   return (
     <>
+    <LoadingWrapper>
       <Head>
         <title>Your Company Name</title>
         <meta name="description" content="Professional web and software solutions tailored for modern businesses." />
@@ -55,7 +57,7 @@ export default function Home() {
       <ServicesSection />
       <ChooseUs />
       <IndustriesWeServe />
-     
+      </LoadingWrapper>
     </>
   );
 }

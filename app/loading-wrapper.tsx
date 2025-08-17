@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { LoaderOne } from "../components/LoaderOne";
+import { LoaderOne } from "./components/ui/loader";
 
 export function LoadingWrapper({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
