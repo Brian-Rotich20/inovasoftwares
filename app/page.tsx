@@ -1,11 +1,11 @@
 'use client';
 
 import Head from 'next/head';
-import HeroSection from './components/HeroSection';
+// import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
 import ChooseUs from './components/ChooseUs';
 import IndustriesWeServe from './components/IndustriesWeServe';
-
+import { HeroSection1 } from './components/HeroSection1';
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Inova Softwares",
-              "url": "https://inovasoftwares.vercel.app/",
+              "url": "https://inovasoftwares.co.ke",
               "url2": "https://devrotich.vercel.app/",
               "description": "We build fast, scalable apps with a focus on performance, security, and scalability. Custom software solutions for startups and growing businesses.",
               "address": {
@@ -38,7 +38,7 @@ export default function Home() {
                 "areaServed": "KE",
                 "availableLanguage": "English"
               },
-              "logo": "https://inovasoftwares.vercel.app/favicon.png",
+              "logo": "https://inovasoftwares.co.ke/favicon.png",
               "sameAs": [
                 "https://www.facebook.com/profile.php?id=100090581374354",
                 "https://www.linkedin.com/in/brian-rotich-11150a2a9",
@@ -50,11 +50,12 @@ export default function Home() {
           }}
         />
       </Head>
-
-      <HeroSection />
+      <HeroSection1 />
+      {/* <HeroSection /> */}
       <ServicesSection />
       <ChooseUs />
       <IndustriesWeServe />
+     
     </>
   );
 }
