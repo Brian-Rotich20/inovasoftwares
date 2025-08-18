@@ -3,11 +3,11 @@
 import Head from 'next/head';
 // import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
-import ChooseUs from './components/ChooseUs';
+
 import IndustriesWeServe from './components/IndustriesWeServe';
 import { HeroSection1 } from './components/HeroSection1';
 import { LoadingWrapper } from "./loading-wrapper";
-
+import { WhyChooseUs } from "./components/ui/timeline";
 export default function Home() {
   return (
     <>
@@ -54,8 +54,9 @@ export default function Home() {
       </Head>
       <HeroSection1 />
       {/* <HeroSection /> */}
+      
       <ServicesSection />
-      <ChooseUs />
+    <WhyChooseUs />
       <IndustriesWeServe />
       </LoadingWrapper>
     </>

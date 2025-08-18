@@ -17,7 +17,7 @@ export function HeroSection1() {
         <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
       </div>
       <div className="px-4 py-10 md:py-20">
-        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-5xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
+        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-5xl font-bold text-slate-700 md:text-6xl lg:text-7xl dark:text-slate-300">
           {"We Build Fast, Scalable Apps"
             .split(" ")
             .map((word, index) => (
@@ -49,7 +49,7 @@ export function HeroSection1() {
           }}
           className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400"
         >
-          We build custom software solutions engineered for performance, security, and scalability. Trusted by businesses worldwide
+          Custom software solutions engineered for performance, security, and scalability. Trusted by businesses worldwide
           up.
         </motion.p>
         <motion.div
@@ -89,11 +89,11 @@ export function HeroSection1() {
         >
           <div className="w-full overflow-hidden rounded-xl border border-gray-300 dark:border-gray-700">
             <img
-              src="hero2.jpeg"
+              src="mockup2.jpg"
               alt="Landing page preview"
               className="aspect-[16/9] h-auto w-full object-cover"
-              height={736}
-              width={552}
+              height={3000}
+              width={2000}
             />
           </div>
         </motion.div>
