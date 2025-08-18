@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: 'https://inovasoftwares.vercel.app/',
+  siteUrl: 'https://inovasoftwares.co.ke/',
   generateRobotsTxt: true,
 }
