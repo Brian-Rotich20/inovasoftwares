@@ -1,136 +1,256 @@
 'use client';
+import React, { useState } from 'react';
+import { Search, Filter, ExternalLink, Github } from 'lucide-react';
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import SectionHeader from '../components/SectionHeader';
-import { fadeIn, staggerContainer } from '../libs/animations';
-import { FaExternalLinkAlt } from 'react-icons/fa';
-import { FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiDjango, SiPostgresql, SiTypescript} from 'react-icons/si';
-import { FaPhp, FaHtml5, FaCss3Alt, FaJs, FaBootstrap } from "react-icons/fa";
-import { SiWoocommerce, SiElementor } from 'react-icons/si';
+// ProjectCard component (embedded for demo)
+function ProjectCard({ 
+  title = "Project Title",
+  description = "A brief description of what this project does and its key features.",
+  imageUrl = "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80",
+  status = "Completed",
+  category = "Web Development",
+  liveUrl,
+  githubUrl
+}) {
+  return (
+    <div className="max-w-xs w-full group/card">
+      <div
+        className="cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4 bg-cover bg-center transform transition-transform duration-300 group-hover/card:scale-105"
+        style={{ 
+          backgroundImage: `url(${imageUrl})`,
+          backgroundPosition: 'center center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute w-full h-full top-0 left-0 transition duration-500 group-hover/card:bg-black opacity-50 group-hover/card:opacity-70"></div>
+        
+        {/* Project Status and Category */}
+        <div className="flex flex-row items-center justify-between z-10">
+          <span className={`px-2 py-1 text-white text-xs rounded-full font-medium ${
+            status === 'Completed' ? 'bg-green-500' : 
+            status === 'In Progress' ? 'bg-yellow-500' : 
+            'bg-blue-500'
+          }`}>
+            {status}
+          </span>
+          <span className="text-sm text-gray-300 font-medium bg-black bg-opacity-50 px-2 py-1 rounded">
+            {category}
+          </span>
+        </div>
 
-export default function Projects() {
+        {/* Project Content */}
+        <div className="text content">
+          <h1 className="font-bold text-xl md:text-2xl text-gray-50 relative z-10 mb-2">
+            {title}
+          </h1>
+          <p className="font-normal text-sm text-gray-50 relative z-10 mb-4">
+            {description}
+          </p>
+          
+          {/* Action Buttons */}
+          <div className="flex gap-2 relative z-10">
+            {liveUrl && (
+              <a 
+                href={liveUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-xs rounded transition-colors"
+              >
+                <ExternalLink size={12} />
+                Live
+              </a>
+            )}
+            {githubUrl && (
+              <a 
+                href={githubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 px-3 py-1 bg-gray-800 hover:bg-gray-900 text-white text-xs rounded transition-colors"
+              >
+                <Github size={12} />
+                Code
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ProjectsPage() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
   const projects = [
     {
-      slug: 'ecommerce-platform',
-      title: 'E-commerce Platform',
-      description: 'A modern full-featured e-commerce shop with product catalog, cart, checkout. Supporting different payment gateways',
-      image: '/shop2.png',
-      live: 'https://frontend-shop-xi.vercel.app',
-      tech: [<FaReact key="react" />, <SiNextdotjs key="next" />, <SiTailwindcss key="tailwind" />, <SiDjango key="django" />, <SiPostgresql key="postgresql"/>]
+      id: 1,
+      title: "E-commerce Platform",
+      description: "A full-stack e-commerce solution with payment integration, inventory management, and modern UI design.",
+      imageUrl: "/shop2.png",
+      status: "Completed",
+      category: "Full Stack",
+      liveUrl: "https://example.com",
+      githubUrl: "https://github.com/example"
     },
     {
-      slug: 'tsavol-print-limited',
-      title: 'Tsavol Print Limited',
-      description: 'A professional printing services website featuring modern design, service catalog, and client portfolio showcase.',
-      image: '/tsavol.png',
-      live: 'https://www.tsavolprintlimited.co.ke/',
-      tech: [<SiTailwindcss key="tailwind" />, <SiDjango key="django" />, <SiNextdotjs key="next" />, <SiTypescript key="typescript" />, <SiPostgresql key="postgresql"/>]
+      id: 2,
+      title: "AI Dashboard",
+      description: "Interactive dashboard for visualizing machine learning model performance with real-time analytics.",
+      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1900&h=900&q=80",
+      status: "In Progress",
+      category: "Data Science",
+      liveUrl: "https://example.com",
+      githubUrl: "https://github.com/example"
     },
     {
-      slug: 'inventory-management-system',
-      title: 'Inventory Management System App',
-      description: 'A collaborative inventory management application with real-time updates and team features.',
-      image: '/inventory.png',
-      tech: [<FaPhp key="php" />, <FaHtml5 key="html" />, <FaCss3Alt key="css" />, <FaJs key="js" />, <FaBootstrap key="bootstrap" />]
+      id: 3,
+      title: "Mobile Fitness App",
+      description: "Cross-platform mobile app for tracking workouts, nutrition, and health metrics with social features.",
+      imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1878&h=920&q=80",
+      status: "Completed",
+      category: "Mobile",
+      liveUrl: "https://example.com",
+      githubUrl: "https://github.com/example"
     },
     {
-      slug: 'personal-blog',
-      title: 'Personal Blog',
-      description: 'A blog built with Django featuring dark mode, tags, categories,pagination and a markdown editor.Also still in progress',
-      image: '/blog.jpeg',
-      live: '/',
-      tech: [<SiDjango key="django" />, <SiTailwindcss key="tailwind" />]
+      id: 4,
+      title: "Task Management Tool",
+      description: "Collaborative project management platform with kanban boards, time tracking, and team communication.",
+      imageUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1900&h=900&q=80",
+      status: "Completed",
+      category: "Web Development",
+      liveUrl: "https://example.com",
+      githubUrl: "https://github.com/example"
     },
     {
-      slug: 'portfolio-website',
-      title: 'Portfolio Website',
-      description: 'A clean, responsive portfolio website designed to showcase a rich collection of graphic designs crafted in Kenya',
-      image: '/lyrebird.png',
-      live: 'https://lyrebird-graphics.netlify.app/',
-      tech: [<FaHtml5 key="html" />, <FaCss3Alt key="css" />, <FaJs key="js" />]
+      id: 5,
+      title: "Weather Analytics",
+      description: "Real-time weather data visualization with predictive modeling and climate trend analysis.",
+      imageUrl: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1878&h=920&q=80",
+      status: "In Progress",
+      category: "Data Science",
+      githubUrl: "https://github.com/example"
     },
     {
-      slug: 'travel-site',
-      title: 'Travel Site',
-      description: 'A travelling website, people in Kenya can book for places, view where travel and access the prices',
-      image: '/travel.png',
-      live: 'https://inovatravels.netlify.app/',
-      tech: [<FaReact key="react" />, <SiDjango key="django" />]
-    },
-    {
-      slug: 'facols-ecommerce',
-      title: 'Facols Ecommerce Website',
-      description: 'An electrical website that deals with modern electrical accessories.',
-      image: '/facols.png',
-      live: 'https://facols.com',
-      tech: [<SiWoocommerce key="woocommerce" />, <SiElementor key="elementor" />]
-    },
+      id: 6,
+      title: "Blockchain Wallet",
+      description: "Secure cryptocurrency wallet with multi-chain support and DeFi integration capabilities.",
+      imageUrl: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1900&h=900&q=80",
+      status: "Planned",
+      category: "Blockchain",
+      githubUrl: "https://github.com/example"
+    }
   ];
 
+  const categories = ['All', 'Full Stack', 'Web Development', 'Mobile', 'Data Science', 'Blockchain'];
+
+  const filteredProjects = projects.filter(project => {
+    const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         project.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
   return (
-    <section id="projects" className="bg-gray-50 dark:bg-gray-900">
-      <div className="section-container">
-         <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
-        <SectionHeader title="Projects" />
-        
-        <motion.div
-          variants={staggerContainer(0.1, 0.2)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              variants={fadeIn('up', index * 0.2)}
-              className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg group cursor-pointer"
-              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-700">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              My Projects
+            </h1>
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+              A collection of innovative solutions and creative endeavors that showcase my passion for technology and problem-solving.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Search and Filter Section */}
+      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row gap-4 mb-12">
+          {/* Search Bar */}
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+            <input
+              type="text"
+              placeholder="Search projects..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+
+          {/* Category Filter */}
+          <div className="relative">
+            <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="pl-10 pr-8 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer"
             >
-              <div className="group border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <div className="relative h-48 sm:h-52 md:h-48 lg:h-44 xl:h-48">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-contain sm:object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-bold mb-2 highlight group-hover:text-[#FFD700] transition-colors line-clamp-1">{project.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-3 text-sm line-clamp-2">{project.description}</p>
+              {categories.map(category => (
+                <option key={category} value={category} className="bg-gray-800">
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-                <div className="flex items-center mb-3 space-x-2 flex-wrap">
-                  {project.tech.map((icon, i) => (
-                    <div key={i} className="text-lg text-gray-600 dark:text-gray-400">
-                      {icon}
-                    </div>
-                  ))}
-                </div>
-
-                {project.live && (
-                  <a 
-                    href={project.live} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-[#FFD700] dark:hover:text-[#FFD700] transition-colors text-sm"
-                  >
-                    <FaExternalLinkAlt className="text-xs" />
-                    <span>Live Demo</span>
-                  </a>
-                )}
-              </div>
-            </div>
-
-            </motion.div>
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          {filteredProjects.map(project => (
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              imageUrl={project.imageUrl}
+              status={project.status}
+              category={project.category}
+              liveUrl={project.liveUrl}
+              githubUrl={project.githubUrl}
+            />
           ))}
-        </motion.div>
+        </div>
+
+        {/* No Results Message */}
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-16">
+            <div className="text-gray-400 text-lg">
+              No projects found matching your criteria.
+            </div>
+            <button
+              onClick={() => {
+                setSearchTerm('');
+                setSelectedCategory('All');
+              }}
+              className="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+            >
+              Clear Filters
+            </button>
+          </div>
+        )}
       </div>
+
+      {/* Call to Action Section */}
+      <div className="bg-gradient-to-r from-purple-600 to-blue-600 py-16">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Interested in Collaborating?
+          </h2>
+          <p className="text-xl text-gray-200 mb-8">
+            I'm always excited to work on new projects and explore innovative solutions.
+          </p>
+          <button className="px-8 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+            Get In Touch
+          </button>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

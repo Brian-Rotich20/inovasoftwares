@@ -14,47 +14,47 @@ import {
 
 const services = [
   {
-    icon: <FaLaptopCode className="text-xl text-yellow-500" />,
+    icon: <FaLaptopCode className="text-xl text-brand" />,
     title: 'Custom Web Applications',
     description: 'We build scalable, modern web apps tailored to your business goals.',
   },
   {
-    icon: <FaMobileAlt className="text-xl text-yellow-500" />,
+    icon: <FaMobileAlt className="text-xl text-brand" />,
     title: 'Mobile App Development',
     description: 'Cross-platform mobile apps with top performance and sleek design.',
   },
   {
-    icon: <FaShoppingCart className="text-xl text-yellow-500" />,
+    icon: <FaShoppingCart className="text-xl text-brand" />,
     title: 'E-Commerce Solutions',
     description: 'Robust online stores with secure payments, inventory, and analytics.',
   },
   {
-    icon: <FaPalette className="text-xl text-yellow-500" />,
+    icon: <FaPalette className="text-xl text-brand" />,
     title: 'UI/UX Design',
     description: 'User-centered design for visually appealing and intuitive interfaces.',
   },
   {
-    icon: <FaCloud className="text-xl text-yellow-500" />,
+    icon: <FaCloud className="text-xl text-brand" />,
     title: 'Cloud & DevOps Services',
     description: 'Deployment, scaling, and automation with top cloud providers.',
   },
   {
-    icon: <FaLightbulb className="text-xl text-yellow-500" />,
+    icon: <FaLightbulb className="text-xl text-brand" />,
     title: 'IT Consulting',
     description: 'Strategic technology advice to optimize your IT infrastructure and processes.',
   },
   {
-    icon: <FaBullhorn className="text-xl text-yellow-500" />,
+    icon: <FaBullhorn className="text-xl text-brand" />,
     title: 'Digital Marketing',
     description: 'Enhance your online presence and reach the right audience through digital channels.',
   },
   {
-    icon: <FaClipboardCheck className="text-xl text-yellow-500" />,
+    icon: <FaClipboardCheck className="text-xl text-brand" />,
     title: 'QA & Testing',
     description: 'Ensure software quality with automated and manual testing services.',
   },
   {
-    icon: <FaSearch className="text-xl text-yellow-500" />,
+    icon: <FaSearch className="text-xl text-brand" />,
     title: 'SEO Services',
     description: 'Improve search engine visibility and increase website traffic organically.',
   },
@@ -64,7 +64,7 @@ export default function ServicesSection() {
   return (
     <section id="services" className="py-12 md:py-16 px-4 md:px-6 max-w-6xl mx-auto">
       <div className="text-center">
-        <h2 className="relative inline-block text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6 after:content-[''] after:block after:h-1 after:w-1/2 after:bg-yellow-500 after:mx-auto after:mt-2">
+        <h2 className="relative inline-block text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6 after:content-[''] after:block after:h-1 after:w-1/2 after:bg-[#2DD4BF] after:mx-auto after:mt-2">
           Solutions and Technologies
         </h2>
       </div>
@@ -81,7 +81,7 @@ export default function ServicesSection() {
             className="bg-slate-800 p-4 md:p-5 rounded-lg shadow hover:shadow-lg transition-all hover:-translate-y-1 border border-slate-700"
           >
             <div className="mb-3">{service.icon}</div>
-            <h3 className="text-base md:text-lg font-semibold mb-2 text-white">
+            <h3 className="text-base md:text-lg font-bold mb-2 text-[#5EEAD4]">
               {service.title}
             </h3>
             <p className="text-slate-300 text-xs md:text-sm leading-relaxed">{service.description}</p>

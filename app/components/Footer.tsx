@@ -30,32 +30,14 @@ export default function ProfessionalFooter() {
           {/* Company Info - Full width on mobile */}
           <div className="col-span-2 lg:col-span-1 mb-4 lg:mb-0">
             <div className="flex items-center space-x-2 mb-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
-                <Code className="w-5 h-5 text-white" />
-              </div>
               <span className="text-xl font-bold">
-                Inova <span className="text-yellow-400">Softwares</span>
+                Inova <span className="text-[#2DD4BF]">Softwares</span>
               </span>
             </div>
             <p className="text-slate-300 text-sm mb-4 leading-relaxed">
               Professional software solutions that transform businesses.
             </p>
-            
-            {/* Trust Indicators */}
-            <div className="space-y-1.5">
-              <div className="flex items-center space-x-2 text-xs text-slate-400">
-                <Shield className="w-3 h-3 text-green-400" />
-                <span>ISO Certified Company</span>
-              </div>
-              <div className="flex items-center space-x-2 text-xs text-slate-400">
-                <Award className="w-3 h-3 text-yellow-400" />
-                <span>50+ Projects Delivered</span>
-              </div>
-              <div className="flex items-center space-x-2 text-xs text-slate-400">
-                <Clock className="w-3 h-3 text-purple-400" />
-                <span>24/7 Support Available</span>
-              </div>
-            </div>
+        
           </div>
 
           {/* Services */}
@@ -64,7 +46,7 @@ export default function ProfessionalFooter() {
             <ul className="space-y-1.5">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a href="#" className="text-slate-300 hover:text-yellow-400 text-sm transition-colors duration-200 flex items-center group">
+                  <a href="#" className="text-slate-300 hover:text-[#2DD4BF] text-sm transition-colors duration-200 flex items-center group">
                     <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {service}
                   </a>
@@ -79,7 +61,7 @@ export default function ProfessionalFooter() {
             <ul className="space-y-1.5">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-slate-300 hover:text-yellow-400 text-sm transition-colors duration-200 flex items-center group">
+                  <a href={link.href} className="text-slate-300 hover:text-[#2DD4BF] text-sm transition-colors duration-200 flex items-center group">
                     <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.name}
                   </a>
@@ -93,48 +75,41 @@ export default function ProfessionalFooter() {
             <h3 className="text-white font-semibold mb-3 text-base">Get In Touch</h3>
             <div className="space-y-2.5">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-[#2DD4BF] mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-slate-300 text-sm">00100</p>
                   <p className="text-slate-300 text-sm">Nairobi, Kenya</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-yellow-400 flex-shrink-0" />
+                <Phone className="w-4 h-4 text-[#2DD4BF] flex-shrink-0" />
                 <a href="tel:+254700000000" className="text-slate-300 hover:text-blue-400 text-sm transition-colors">
                   +254 720 060 728
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-yellow-400 flex-shrink-0" />
+                <Mail className="w-4 h-4 text-[#5EEAD4] flex-shrink-0" />
                 <a href="mailto:info@inovasoftwares.com" className="text-slate-300 hover:text-blue-400 text-sm transition-colors">
                   info@inovasoftwares.com
                 </a>
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="mt-4">
-              <button className="w-full bg-yellow-600 hover:bg-yellow-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
-                <span>Start Your Project</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
 
             {/* Social Links */}
             <div className="mt-4">
               <p className="text-slate-400 text-xs mb-2">Follow Us</p>
               <div className="flex space-x-2">
-                <a href="#" className="w-8 h-8 bg-slate-800 hover:bg-yellow-600 rounded-lg flex items-center justify-center transition-colors duration-200">
+                <a href="#" className="w-8 h-8 bg-slate-800 hover:bg-[#14B8A6] rounded-lg flex items-center justify-center transition-colors duration-200">
                   <Facebook className="w-4 h-4" />
                 </a>
-                <a href="#" className="w-8 h-8 bg-slate-800 hover:bg-yellow-600 rounded-lg flex items-center justify-center transition-colors duration-200">
+                <a href="#" className="w-8 h-8 bg-slate-800 hover:bg-[#14B8A6] rounded-lg flex items-center justify-center transition-colors duration-200">
                   <Twitter className="w-4 h-4" />
                 </a>
-                <a href="#" className="w-8 h-8 bg-slate-800 hover:bg-yellow-600 rounded-lg flex items-center justify-center transition-colors duration-200">
+                <a href="#" className="w-8 h-8 bg-slate-800 hover:bg-[#14B8A6] rounded-lg flex items-center justify-center transition-colors duration-200">
                   <Linkedin className="w-4 h-4" />
                 </a>
-                <a href="#" className="w-8 h-8 bg-slate-800 hover:bg-yellow-600 rounded-lg flex items-center justify-center transition-colors duration-200">
+                <a href="#" className="w-8 h-8 bg-slate-800 hover:bg-[#14B8A6] rounded-lg flex items-center justify-center transition-colors duration-200">
                   <Instagram className="w-4 h-4" />
                 </a>
               </div>
@@ -151,13 +126,13 @@ export default function ProfessionalFooter() {
               © 2025 Inova Softwares. All rights reserved.
             </p>
             <div className="flex items-center space-x-4 mt-2 md:mt-0">
-              <a href="#" className="text-slate-400 hover:text-yellow-400 text-xs transition-colors">
+              <a href="#" className="text-slate-400 hover:text-[#5EEAD4] text-xs transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-slate-400 hover:text-yellow-400 text-xs transition-colors">
+              <a href="#" className="text-slate-400 hover:text-[#5EEAD4]  text-xs transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-slate-400 hover:text-yellow-400 text-xs transition-colors">
+              <a href="#" className="text-slate-400 hover:text-[#5EEAD4]  text-xs transition-colors">
                 Cookie Policy
               </a>
             </div>

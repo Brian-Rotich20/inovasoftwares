@@ -97,7 +97,7 @@ export default function ContactSection() {
           {/* Contact Form */}
           <div className="bg-gray-800 rounded-2xl p-8 shadow-md">
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 bg-yellow-100 text-yellow-600 rounded-xl flex items-center justify-center mr-4">
+              <div className="w-10 h-10 bg-yellow-100 text-brand rounded-xl flex items-center justify-center mr-4">
                 <MessageSquare className="w-5 h-5" />
               </div>
               <div>

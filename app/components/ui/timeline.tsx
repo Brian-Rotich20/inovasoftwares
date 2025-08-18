@@ -18,72 +18,74 @@ export const WhyChooseUs = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
-  const data: TimelineEntry[] = [
-    {
-      title: "Fast Development",
-      content: (
-        <div className="space-y-4">
-          <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed">
-            With vast software engineering experience, we ship your solution on time.
+  
+const data: TimelineEntry[] = [
+  {
+    title: "Fast Development",
+    content: (
+      <div className="space-y-4">
+        <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed">
+          With vast software engineering experience, we ship your solution on time.
+        </p>
+        <div className="p-4 rounded-lg border-l-4 border-brand bg-[rgba(13,148,136,0.1)] dark:bg-[rgba(13,148,136,0.2)]">
+          <p className="text-sm text-brand dark:text-brand">
+            Average delivery time: 30% faster than industry standard
           </p>
-          <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg border-l-4 border-purple-500">
-            <p className="text-sm text-purple-700 dark:text-purple-300">
-              Average delivery time: 30% faster than industry standard
-            </p>
-          </div>
         </div>
-      ),
-      icon: <Rocket className="h-5 w-5 text-purple-600" />,
-    },
-    {
-      title: "Quality Assurance",
-      content: (
-        <div className="space-y-4">
-          <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed">
-            Our internal and external testers ensure quality and reliability through comprehensive testing protocols.
+      </div>
+    ),
+    icon: <Rocket className="h-5 w-5 text-brand" />,
+  },
+  {
+    title: "Quality Assurance",
+    content: (
+      <div className="space-y-4">
+        <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed">
+          Our internal and external testers ensure quality and reliability through comprehensive testing protocols.
+        </p>
+        <div className="p-4 rounded-lg border-l-4 border-brand bg-[rgba(13,148,136,0.1)] dark:bg-[rgba(13,148,136,0.2)]">
+          <p className="text-sm text-brand dark:text-brand">
+            99.9% uptime guarantee with 24/7 monitoring
           </p>
-          <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
-            <p className="text-sm text-blue-700 dark:text-blue-300">
-              99.9% uptime guarantee with 24/7 monitoring
-            </p>
-          </div>
         </div>
-      ),
-      icon: <ShieldCheck className="h-5 w-5 text-blue-600" />,
-    },
-    {
-      title: "Classic Designs",
-      content: (
-        <div className="space-y-4">
-          <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed">
-            We craft visually appealing and user-friendly solutions that stand the test of time.
+      </div>
+    ),
+    icon: <ShieldCheck className="h-5 w-5 text-brand" />,
+  },
+  {
+    title: "Classic Designs",
+    content: (
+      <div className="space-y-4">
+        <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed">
+          We craft visually appealing and user-friendly solutions that stand the test of time.
+        </p>
+        <div className="p-4 rounded-lg border-l-4 border-brand bg-[rgba(13,148,136,0.1)] dark:bg-[rgba(13,148,136,0.2)]">
+          <p className="text-sm text-brand dark:text-brand">
+            Award-winning designs with focus on user experience
           </p>
-          <div className="bg-pink-50 dark:bg-pink-900/20 p-4 rounded-lg border-l-4 border-pink-500">
-            <p className="text-sm text-pink-700 dark:text-pink-300">
-              Award-winning designs with focus on user experience
-            </p>
-          </div>
         </div>
-      ),
-      icon: <Palette className="h-5 w-5 text-pink-600" />,
-    },
-    {
-      title: "Reduced Costs",
-      content: (
-        <div className="space-y-4">
-          <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed">
-            We help you gain strategic advantage with cost-effective solutions without compromising quality.
+      </div>
+    ),
+    icon: <Palette className="h-5 w-5 text-brand" />,
+  },
+  {
+    title: "Reduced Costs",
+    content: (
+      <div className="space-y-4">
+        <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed">
+          We help you gain strategic advantage with cost-effective solutions without compromising quality.
+        </p>
+        <div className="p-4 rounded-lg border-l-4 border-brand bg-[rgba(13,148,136,0.1)] dark:bg-[rgba(13,148,136,0.2)]">
+          <p className="text-sm text-brand dark:text-brand">
+            Average cost savings: 40% compared to traditional agencies
           </p>
-          <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border-l-4 border-green-500">
-            <p className="text-sm text-green-700 dark:text-green-300">
-              Average cost savings: 40% compared to traditional agencies
-            </p>
-          </div>
         </div>
-      ),
-      icon: <DollarSign className="h-5 w-5 text-green-600" />,
-    },
-  ];
+      </div>
+    ),
+    icon: <DollarSign className="h-5 w-5 text-brand" />,
+  },
+];
+
 
   useEffect(() => {
     if (ref.current) {
@@ -109,20 +111,21 @@ export const WhyChooseUs = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-orange-600 to-yellow-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-bold bg-[#0D9488] bg-clip-text text-transparent">
             Why Choose Us
           </h2>
           <p className="mt-6 text-neutral-600 dark:text-neutral-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             We specialize in software development, hosting, and SEO. We've helped bring ideas to life 
             with sustainable business practices across industries.
           </p>
-          <motion.button 
-            className="mt-8 px-8 py-4 rounded-full bg-gradient-to-r from-orange-600 to-orange-500 text-white font-semibold hover:from-orange-700 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Schedule a Consultation
-          </motion.button>
+        <motion.button 
+        className="mt-8 px-6 py-4 rounded-full bg-[#0D9488] hover:bg-[#0D9488]/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-white"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        >
+        Schedule a Consultation
+        </motion.button>
+
         </motion.div>
       </div>
 

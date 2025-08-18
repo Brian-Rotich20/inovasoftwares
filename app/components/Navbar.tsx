@@ -43,7 +43,7 @@ export default function ProfessionalNavbar() {
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <span className={`${logoFont.className} text-2xl font-bold text-white`}>
-                Inova <span className="text-orange-400">Softwares</span>
+                Inova <span className="text-[#2DD4BF]">Softwares</span>
               </span>
             </div>
 
@@ -56,7 +56,7 @@ export default function ProfessionalNavbar() {
                   className={`${logoFont.className} text-slate-300 hover:text-white font-medium transition-colors duration-200 relative group`}
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#2DD4BF] transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
             </div>
@@ -124,7 +124,7 @@ export default function ProfessionalNavbar() {
                 </div>
 
                 {/* Mobile CTA Button - Smaller */}
-                <button className="w-full flex items-center justify-center space-x-2 bg-orange-600 hover:bg-orange-500 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-200">
+                <button className="w-full flex items-center justify-center space-x-2 bg-brand hover:bg-[#2DD4BF] text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-200">
                   <span>Get In Touch</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
