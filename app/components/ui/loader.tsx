@@ -24,7 +24,7 @@ export const LoaderOne = () => {
           y: [0, 10, 0],
         }}
         transition={transition(0)}
-        className="h-4 w-4 rounded-full border border-neutral-300 bg-gradient-to-b from-neutral-400 to-neutral-300"
+        className="h-4 w-4 rounded-full border border-brand bg-gradient-to-b from-neutral-400 to-neutral-300"
       />
       <motion.div
         initial={{
@@ -70,7 +70,7 @@ export const LoaderTwo = () => {
         animate={{
           x: [0, 20, 0],
         }}
-        className="h-4 w-4 rounded-full bg-neutral-200 shadow-md dark:bg-neutral-500"
+        className="h-4 w-4 rounded-full bg-brand shadow-md dark:bg-neutral-500"
       />
       <motion.div
         initial={{
