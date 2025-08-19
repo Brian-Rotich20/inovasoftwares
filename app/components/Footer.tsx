@@ -90,7 +90,7 @@ export default function ProfessionalFooter() {
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-[#5EEAD4] flex-shrink-0" />
                 <a href="mailto:info@inovasoftwares.com" className="text-slate-300 hover:text-blue-400 text-sm transition-colors">
-                  info@inovasoftwares.com
+                  ralphrotich@gmail.com
                 </a>
               </div>
             </div>
