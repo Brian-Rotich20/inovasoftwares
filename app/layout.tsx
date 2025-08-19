@@ -29,16 +29,19 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: 'Inova Softwares Company',
   description: 'Your modern software partner.',
-  keywords: ['inova', 'software company', 'web development', 'full-stack developers', 'Mobile Applications', 'Nairobi'],
+  keywords: ['inova', 'software company', 'web development', 'full-stack developers', 'Mobile Applications', 'Nairobi', 'Kenya', 'software solutions', 'custom software', 'web applications', 'mobile apps', 'software development',
+               'IT solutions', 'digital transformation', 'Leading software company', 'software engineering', 'technology solutions', 'business software', 'enterprise applications', 'cloud solutions', 'AI development', 'machine learning',
+                'data analytics', 'e-commerce solutions', 'SaaS development', 'API development', 'software consulting', 'UI/UX design', 'agile development', 'DevOps services', 'cybersecurity solutions', 
+                'IT support services', 'Brian Rotich', 'Ralph Rotich', 'Website', 'Applications'],
   authors: [{ name: 'Inova Team' }],
   openGraph: {
     title: 'Inova Softwares',
     description: 'Your modern software partner.',
-    url: 'https://inovasoftwares.vercel.app',
+    url: 'https://inovasoftwares.co.ke',
     siteName: 'Inova Softwares',
     images: [
       {
-        url: 'https://inovasoftwares.vercel.app/og-image.jpg',
+        url: 'https://inovasoftwares.co.ke/og-image.jpg',
         width: 1200,
         height: 630,
       },

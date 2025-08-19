@@ -12,7 +12,7 @@ export default function Home() {
     <>
     <LoadingWrapper>
       <Head>
-        <title>Your Company Name</title>
+        <title>Inova Softwares</title>
         <meta name="description" content="Professional web and software solutions tailored for modern businesses." />
         <script
           type="application/ld+json"
