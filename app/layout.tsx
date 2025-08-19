@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 import localFont from 'next/font/local'
 import { Roboto } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import { Toaster } from 'sonner';
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -79,7 +79,7 @@ export default function RootLayout({
          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <Navbar />
         {children}
-        <Toaster position="top-right" richColors closeButton /> 
+       
         <Footer/>
       </ThemeProvider>
       </body>
