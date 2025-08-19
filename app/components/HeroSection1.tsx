@@ -65,12 +65,18 @@ export function HeroSection1() {
           }}
           className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
         >
-          <button className="w-38 transform rounded-lg bg-[#0D9488] hover:bg-[#0D9488]/90  px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 ">
+            <a
+            href="/contact"
+            className="w-40 transform rounded-lg bg-[#0D9488] hover:bg-[#0D9488]/90 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center"
+            >
             Get Started
-          </button>
-          <button className="w-42 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900">
-            Contact Support
-            </button>
+            </a>
+            <a
+            href="/projects"
+            className="w-40 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900 flex items-center justify-center"
+            >
+            View Projects
+            </a>
 
         </motion.div>
         <motion.div
