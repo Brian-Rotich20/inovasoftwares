@@ -1,6 +1,6 @@
 'use client';
 
-
+import { TrustedBy } from './components/ui/TrustedBy';
 import Head from 'next/head';
 import ServicesSection from './components/ServicesSection';
 import IndustriesWeServe from './components/IndustriesWeServe';
@@ -60,8 +60,10 @@ export default function Home() {
       <ServicesSection />
     <WhyChooseUs />
       <IndustriesWeServe />
+      <TrustedBy  />
       </LoadingWrapper>
        <ConstructionDialog /> 
+       
     </>
   );
 }
