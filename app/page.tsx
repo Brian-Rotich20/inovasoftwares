@@ -1,13 +1,27 @@
 'use client';
 
+import { useEffect } from 'react';
+import { toast } from 'sonner';
+
 import Head from 'next/head';
 import ServicesSection from './components/ServicesSection';
 import IndustriesWeServe from './components/IndustriesWeServe';
 import { HeroSection1 } from './components/HeroSection1';
 import { LoadingWrapper } from "./loading-wrapper";
 import { WhyChooseUs } from "./components/ui/timeline";
+import { ConstructionToast } from './components/ConstructionToast';
 
 export default function Home() {
+
+  useEffect(() => {
+    toast("🚧 This website is currently under construction", {
+      description: "Please check back later for updates.",
+      duration: Infinity,   // stays until user closes
+      dismissible: true,    // adds close button (X)
+    });
+    
+  }, []);
+  
   return (
     <>
     <LoadingWrapper>
@@ -56,6 +70,7 @@ export default function Home() {
     <WhyChooseUs />
       <IndustriesWeServe />
       </LoadingWrapper>
+       <ConstructionToast /> 
     </>
   );
 }
