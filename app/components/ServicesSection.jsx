@@ -78,13 +78,18 @@ export default function ServicesSection() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-slate-800 p-4 md:p-5 rounded-lg shadow hover:shadow-lg transition-all hover:-translate-y-1 border border-slate-700"
+            className="relative bg-slate-800 p-4 md:p-5 rounded-lg shadow hover:shadow-lg transition-all hover:-translate-y-1 border border-slate-700 overflow-hidden"
           >
             <div className="mb-3">{service.icon}</div>
             <h3 className="text-base md:text-lg font-bold mb-2 text-[#5EEAD4]">
               {service.title}
             </h3>
             <p className="text-slate-300 text-xs md:text-sm leading-relaxed">{service.description}</p>
+
+            {/* Decorative bottom line */}
+            <div className="absolute inset-x-0 bottom-0 h-px w-full bg-neutral-200/10 dark:bg-neutral-800/80">
+              <div className="absolute mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+            </div>
           </div>
         ))}
       </div>
