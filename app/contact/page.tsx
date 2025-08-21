@@ -19,7 +19,7 @@ const ContactPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {/* Phone Card */}
-          <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-teal-500 transition-all duration-300">
+          <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-3.5 hover:border-teal-500 transition-all duration-300">
             <div className="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <Phone className="w-6 h-6 text-white" />
             </div>
@@ -28,7 +28,7 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Email Card */}
-          <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-teal-500 transition-all duration-300">
+          <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-3.5 hover:border-teal-500 transition-all duration-300">
             <div className="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <Mail className="w-6 h-6 text-white" />
             </div>
@@ -37,7 +37,7 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Location Card */}
-          <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-teal-500 transition-all duration-300">
+          <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-3.5 hover:border-teal-500 transition-all duration-300">
             <div className="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <MapPin className="w-6 h-6 text-white" />
             </div>
@@ -45,7 +45,7 @@ const ContactPage: React.FC = () => {
             <p className="text-gray-300">Nairobi, Kenya</p>
           </div>
 
-        <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-teal-500 transition-all duration-300">
+        <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-3.5 hover:border-teal-500 transition-all duration-300">
           <div className="bg-green-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
             <FaWhatsapp className="w-6 h-6 text-white" />
           </div>

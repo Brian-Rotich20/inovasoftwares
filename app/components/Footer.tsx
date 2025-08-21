@@ -18,7 +18,7 @@ export default function ProfessionalFooter() {
     { name: 'Projects', href: '/projects' },
     { name: 'Pricing', href: '/prices' },
     { name: 'Contact', href: '#contact' },
-    { name: 'Blog', href: '#blog' }
+
   ]
 
   return (
@@ -35,7 +35,7 @@ export default function ProfessionalFooter() {
               </span>
             </div>
             <p className="text-slate-300 text-sm mb-4 leading-relaxed">
-              Professional software solutions that transform businesses.
+              Transform your business with our innovative software solutions.
             </p>
         
           </div>
@@ -126,14 +126,14 @@ export default function ProfessionalFooter() {
               © 2025 Inova Softwares. All rights reserved.
             </p>
             <div className="flex items-center space-x-4 mt-2 md:mt-0">
-              <a href="#" className="text-slate-400 hover:text-[#5EEAD4] text-xs transition-colors">
+              <a href="privacy" className="text-slate-400 hover:text-[#5EEAD4] text-xs transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-slate-400 hover:text-[#5EEAD4]  text-xs transition-colors">
+              <a href="terms" className="text-slate-400 hover:text-[#5EEAD4]  text-xs transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-slate-400 hover:text-[#5EEAD4]  text-xs transition-colors">
-                Cookie Policy
+              <a href="faq" className="text-slate-400 hover:text-[#5EEAD4]  text-xs transition-colors">
+                FAQs
               </a>
             </div>
           </div>
