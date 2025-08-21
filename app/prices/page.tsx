@@ -118,32 +118,6 @@ export default function PricingPage() {
     { name: "Database Development", price: "KES 50,000 - 100,000", icon: Package }
   ];
 
-  const paymentMethods = [
-    {
-      name: "M-Pesa",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/M-PESA_LOGO-01.svg/1200px-M-PESA_LOGO-01.svg.png"
-    },
-    {
-      name: "PayPal",
-      logo: "https://logos-world.net/wp-content/uploads/2020/07/PayPal-Logo.png"
-    },
-    {
-      name: "Stripe",
-      logo: "https://logos-world.net/wp-content/uploads/2021/03/Stripe-Logo.png"
-    },
-    {
-      name: "Paystack",
-      logo: "/1200px-Paystack_Logo.png"
-    },
-    {
-      name: "Intersend",
-      logo: "/Interswitch_logo.svg.png"
-    },
-    {
-      name: "Bank Transfer",
-      logo: "https://cdn-icons-png.flaticon.com/512/2171/2171046.png"
-    }
-  ];
 
   const commonWebsites = [
     "Business Portfolio",
@@ -230,31 +204,6 @@ export default function PricingPage() {
             ))}
           </div>
         </div>
-
-        {/* Payment Methods Section */}
-       <div className="relative overflow-hidden p-4 mb-12">
-      <h2 className="text-xl font-bold text-gray-900 mb-4 text-center">
-        E-commerce Payment Gateways
-      </h2>
-
-      <div className="w-full overflow-hidden">
-        <div className="flex animate-slide whitespace-nowrap space-x-16">
-          {[...paymentMethods, ...paymentMethods].map((method, index) => (
-            <div key={index} className="flex items-center space-x-2">
-              <Image
-                src={method.logo}
-                alt={method.name}
-                width={32}
-                height={32}
-                className="object-contain"
-              />
-              <span className="text-sm text-gray-700">{method.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
 
 
         {/* Digital Marketing Services */}
