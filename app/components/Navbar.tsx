@@ -42,10 +42,17 @@ export default function ProfessionalNavbar() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center space-x-2">
+              <img 
+                src="/logo2.png" 
+                alt="Inova Softwares Logo" 
+                className="w-10 h-10 rounded-full object-cover" 
+              />
               <span className={`${logoFont.className} text-2xl font-bold text-white`}>
                 Inova <span className="text-[#2DD4BF]">Softwares</span>
               </span>
             </div>
+
+
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
