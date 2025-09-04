@@ -7,7 +7,6 @@ import IndustriesWeServe from './components/IndustriesWeServe';
 import { HeroSection1 } from './components/HeroSection1';
 import { LoadingWrapper } from "./loading-wrapper";
 import { WhyChooseUs } from "./components/ui/timeline";
-import ConstructionDialog from './components/ConstructionToast';
 
 export default function Home() {
 
@@ -62,7 +61,7 @@ export default function Home() {
       <IndustriesWeServe />
       <TrustedBy  />
       </LoadingWrapper>
-       <ConstructionDialog /> 
+       
        
     </>
   );
