@@ -75,6 +75,7 @@ html {
 body {
   background: var(--background-dark-grey);
   color: var(--foreground);
+  overflow-x: hidden;
   
 
   
