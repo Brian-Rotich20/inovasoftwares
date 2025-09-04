@@ -14,13 +14,13 @@ export default function ProfessionalNavbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrolled(window.scrollY > 20)
+  //   }
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  // }, [])
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -35,20 +35,16 @@ export default function ProfessionalNavbar() {
       {/* Navbar */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-slate-900/95 backdrop-blur-lg shadow-lg border-b border-slate-700/50' 
-          : 'bg-slate-900/80 backdrop-blur-sm'
+          ? 'bg-white backdrop-blur-lg shadow-lg border-b border-slate-700/50' 
+          : 'bg-white backdrop-blur-sm'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img 
-                src="/logo2.png" 
-                alt="Inova Softwares Logo" 
-                className="w-10 h-10 rounded-full object-cover" 
-              />
-              <span className={`${logoFont.className} text-2xl font-bold text-white`}>
-                Inova <span className="text-[#2DD4BF]">Softwares</span>
+      
+              <span className="text-3xl font-bold text-white">
+                 <span className="text-gray-950 font-bold font"> InovaSoftwares</span>
               </span>
             </div>
 
@@ -60,7 +56,7 @@ export default function ProfessionalNavbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`${logoFont.className} text-slate-300 hover:text-white font-medium transition-colors duration-200 relative group`}
+                  className=" text-gray-700 font-medium transition-colors duration-200 relative group"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#2DD4BF] transition-all duration-300 group-hover:w-full"></span>

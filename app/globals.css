@@ -6,11 +6,11 @@
   --btn-gold-hover-bg: #e6c200; 
   --btn-gold-text: #FFD700;
 
-  --background-dark-grey: #111827; 
-
+  --background-dark-grey: #FFFFFF; 
+ --font-family: var(--font-satoshi);
 }
 html {
-  font-family: var(--font-roboto), sans-serif;
+  font-family: var(--font-satoshi), Verdana, sans-serif;
 }
 
 @layer components {
@@ -76,7 +76,7 @@ body {
   background: var(--background-dark-grey);
   color: var(--foreground);
   overflow-x: hidden;
-  
+  font-family: var(--font-family), sans-serif;
 
   
 }

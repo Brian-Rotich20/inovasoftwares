@@ -7,7 +7,6 @@ import localFont from 'next/font/local'
 import { Roboto } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
-
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -20,6 +19,12 @@ const logoFont = localFont({
   variable: '--font-logo', // key step
 });
 
+  const satoshi = localFont({
+    src: "../public/Satoshi-Variable.ttf", // variable font file
+    variable: "--font-satoshi",
+    weight: "100 900", // covers all weights
+    style: "normal",
+  });
 
 const roboto = Roboto({
   weight: ["400", "500", "700"], // adjust as needed
@@ -72,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={roboto.variable}>
+    <html lang="en" className={satoshi.variable}>
       <body
         
       >
