@@ -17,7 +17,7 @@ export function HeroSection1() {
         <div className="absolute mx-auto h-px w-90 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
       </div>
       <div className="px-4 py-10 md:py-20">
-        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-5xl font-bold text-gray-950 md:text-6xl lg:text-7xl">
+        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-5xl font-bold text-gray-950 md:text-6xl lg:text-6xl">
           {"We Build Fast, Scalable Apps"
             .split(" ")
             .map((word, index) => (

@@ -181,7 +181,7 @@ const data: TimelineEntry[] = [
         >
           <motion.div
             style={{ height: heightTransform, opacity: opacityTransform }}
-            className="absolute inset-x-0 top-0 w-[3px] bg-gradient-to-b from-purple-500 via-blue-500 to-purple-600 rounded-full"
+            className="absolute inset-x-0 top-0 w-[3px] bg-gradient-to-b from-[#2DD4BF] via-blue-500 to-[#2DD4BF] rounded-full"
           />
           
           {/* Additional glow effect for the line */}

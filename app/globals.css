@@ -77,11 +77,11 @@ body {
   color: var(--foreground);
   overflow-x: hidden;
   font-family: var(--font-family), sans-serif;
-
-  
 }
 
-
+html, body {
+  @apply overflow-x-hidden;
+}
 
 @theme inline {
   --animate-move: move 5s linear infinite;
