@@ -148,7 +148,7 @@ const data: TimelineEntry[] = [
                   {item.icon}
                 </div>
                 {/* Glow effect */}
-                <div className="absolute inset-0 h-12 w-12 rounded-full bg-gradient-to-r from-orange-600 to-orange-500 opacity-20 blur-md"></div>
+                <div className="absolute inset-0 h-12 w-12 rounded-full  opacity-20 blur-md"></div>
               </div>
 
               {/* Title */}

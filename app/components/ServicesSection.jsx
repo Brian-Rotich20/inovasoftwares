@@ -64,12 +64,12 @@ export default function ServicesSection() {
   return (
     <section id="services" className="py-12 md:py-16 px-4 md:px-6 max-w-6xl mx-auto">
       <div className="text-center">
-        <h2 className="relative inline-block text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6 after:content-[''] after:block after:h-1 after:w-1/2 after:bg-[#2DD4BF] after:mx-auto after:mt-2">
+        <h2 className="relative inline-block text-2xl md:text-3xl font-bold text-gray-900  mb-4 md:mb-6 after:content-[''] after:block after:h-1 after:w-1/2 after:bg-[#2DD4BF] after:mx-auto after:mt-2">
           Solutions and Technologies
         </h2>
       </div>
 
-      <p className="text-center text-slate-300 mb-8 md:mb-10 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+      <p className="text-center text-gray-800 mb-8 md:mb-10 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
         Using latest technologies, we deliver quality, reliable and scalable solutions to transform your business and remain competitive.
         We have mastered the art of software engineering in a wide range of industries to bring valuable insights to our esteemed clients.
       </p>
