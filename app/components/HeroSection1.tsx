@@ -78,7 +78,7 @@ export function HeroSection1() {
             </a>
         </motion.div>
         
-        {/* Dotted Background Section - Full Width */}
+        {/* Image Section - Hidden on small screens, dotted background on larger screens */}
         <motion.div
           initial={{
             opacity: 0,
@@ -92,9 +92,9 @@ export function HeroSection1() {
             duration: 0.3,
             delay: 1.2,
           }}
-          className="relative z-10 mt-20 -mx-4 md:-mx-8 lg:-mx-12"
+          className="relative z-10 mt-20 hidden md:block -mx-4 md:-mx-8 lg:-mx-12"
         >
-          {/* Full Width Dotted Background Container */}
+          {/* Full Width Dotted Background Container - Only on medium+ screens */}
           <div className="relative flex min-h-[600px] w-screen items-center justify-center bg-white">
             {/* Dotted Background */}
             <div
