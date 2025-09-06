@@ -78,7 +78,7 @@ export function HeroSection1() {
             </a>
         </motion.div>
         
-        {/* Image Section - Hidden on small screens, dotted background on larger screens */}
+        {/* Image Section - Responsive: simple image on small screens, dotted background on larger screens */}
         <motion.div
           initial={{
             opacity: 0,
@@ -92,31 +92,46 @@ export function HeroSection1() {
             duration: 0.3,
             delay: 1.2,
           }}
-          className="relative z-10 mt-20 hidden md:block -mx-4 md:-mx-8 lg:-mx-12"
+          className="relative z-10 mt-20"
         >
-          {/* Full Width Dotted Background Container - Only on medium+ screens */}
-          <div className="relative flex min-h-[600px] w-screen items-center justify-center bg-white">
-            {/* Dotted Background */}
-            <div
-              className={cn(
-                "absolute inset-0",
-                "[background-size:20px_20px]",
-                "[background-image:radial-gradient(#d1d5db_1.5px,transparent_1.5px)]",
-              )}
-            />
-            {/* Reduced radial gradient overlay for subtle faded look */}
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white/20 [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)]"></div>
-            
-            {/* Centered Image */}
-            <div className="relative z-20 w-full max-w-5xl px-8">
-              <div className="overflow-hidden rounded-xl shadow-2xl">
-                <img
-                  src="ecommerce.jpg"
-                  alt="Landing page preview"
-                  className="aspect-[16/9] h-auto w-full object-cover"
-                  height={3000}
-                  width={2000}
-                />
+          {/* Mobile: Simple centered image */}
+          <div className="block md:hidden px-4">
+            <div className="overflow-hidden rounded-xl shadow-2xl">
+              <img
+                src="ecommerce.jpg"
+                alt="Landing page preview"
+                className="aspect-[16/9] h-auto w-full object-cover"
+                height={3000}
+                width={2000}
+              />
+            </div>
+          </div>
+
+          {/* Desktop: Full Width Dotted Background Container */}
+          <div className="hidden md:block -mx-4 md:-mx-8 lg:-mx-12">
+            <div className="relative flex min-h-[600px] w-screen items-center justify-center bg-white">
+              {/* Dotted Background */}
+              <div
+                className={cn(
+                  "absolute inset-0",
+                  "[background-size:20px_20px]",
+                  "[background-image:radial-gradient(#d1d5db_1.5px,transparent_1.5px)]",
+                )}
+              />
+              {/* Reduced radial gradient overlay for subtle faded look */}
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white/20 [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)]"></div>
+              
+              {/* Centered Image */}
+              <div className="relative z-20 w-full max-w-5xl px-8">
+                <div className="overflow-hidden rounded-xl shadow-2xl">
+                  <img
+                    src="ecommerce.jpg"
+                    alt="Landing page preview"
+                    className="aspect-[16/9] h-auto w-full object-cover"
+                    height={3000}
+                    width={2000}
+                  />
+                </div>
               </div>
             </div>
           </div>
