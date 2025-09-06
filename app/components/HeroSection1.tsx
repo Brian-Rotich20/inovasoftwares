@@ -1,7 +1,7 @@
 "use client";
 
-
 import { motion } from "motion/react";
+import { cn } from "../lib/utils";
 
 export function HeroSection1() {
   return (
@@ -49,8 +49,7 @@ export function HeroSection1() {
           }}
           className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-800"
         >
-          Custom software solutions engineered for performance, security, and scalability. Trusted by businesses worldwide
-          up.
+          Custom software solutions engineered for performance, security, and scalability. Trusted by businesses worldwide.
         </motion.p>
         <motion.div
           initial={{
@@ -73,12 +72,13 @@ export function HeroSection1() {
             </a>
             <a
             href="/projects"
-            className="w-40 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900 flex items-center justify-center"
+            className="w-40 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-gray-900 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 flex items-center justify-center"
             >
             View Projects
             </a>
-
         </motion.div>
+        
+        {/* Dotted Background Section */}
         <motion.div
           initial={{
             opacity: 0,
@@ -92,20 +92,36 @@ export function HeroSection1() {
             duration: 0.3,
             delay: 1.2,
           }}
-          className="relative z-10 mt-20 rounded-3xl border border-neutral-200 bg-neutral-100 p-4 shadow-md dark:border-neutral-800 dark:bg-neutral-600"
+          className="relative z-10 mt-20"
         >
-          <div className="w-full overflow-hidden rounded-xl border border-gray-300 dark:border-gray-700">
-            <img
-              src="mockup2.jpg"
-              alt="Landing page preview"
-              className="aspect-[16/9] h-auto w-full object-cover"
-              height={3000}
-              width={2000}
+          {/* Dotted Background Container */}
+          <div className="relative flex min-h-[600px] w-full items-center justify-center bg-white rounded-3xl border">
+            {/* Dotted Background */}
+            <div
+              className={cn(
+                "absolute inset-0 rounded-3xl",
+                "[background-size:20px_20px]",
+                "[background-image:radial-gradient(#9ca3af_1.5px,transparent_1.5px)]",
+              )}
             />
+            {/* Radial gradient overlay for faded look - more subtle */}
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white/40 [mask-image:radial-gradient(ellipse_at_center,transparent_40%,black)] rounded-3xl"></div>
+            
+            {/* Centered Image with reduced width */}
+            <div className="relative z-20 w-full max-w-4xl px-8">
+              <div className="overflow-hidden rounded-xl border shadow-2xl">
+                <img
+                  src="ecommerce.jpg"
+                  alt="Landing page preview"
+                  className="aspect-[16/9] h-auto w-full object-cover"
+                  height={3000}
+                  width={2000}
+                />
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
     </div>
   );
 }
-
