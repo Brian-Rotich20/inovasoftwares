@@ -34,7 +34,7 @@ export default function ProfessionalFooter() {
                 Inova <span className="text-[#2DD4BF]">Softwares</span>
               </span>
             </div>
-            <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+            <p className="text-slate-300 text-xs mb-4 leading-relaxed">
               Transform your business with our innovative software solutions.
             </p>
         
@@ -42,11 +42,11 @@ export default function ProfessionalFooter() {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold mb-3 text-base">Our Services</h3>
+            <h3 className="text-white font-semibold mb-3 text-sm">Our Services</h3>
             <ul className="space-y-1.5">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a href="#" className="text-slate-300 hover:text-[#2DD4BF] text-sm transition-colors duration-200 flex items-center group">
+                  <a href="#" className="text-slate-300 hover:text-[#2DD4BF] text-xs transition-colors duration-200 flex items-center group">
                     <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {service}
                   </a>
@@ -57,11 +57,11 @@ export default function ProfessionalFooter() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-3 text-base">Quick Links</h3>
+            <h3 className="text-white font-semibold mb-3 text-sm">Quick Links</h3>
             <ul className="space-y-1.5">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-slate-300 hover:text-[#2DD4BF] text-sm transition-colors duration-200 flex items-center group">
+                  <a href={link.href} className="text-slate-300 hover:text-[#2DD4BF] text-xs transition-colors duration-200 flex items-center group">
                     <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.name}
                   </a>
@@ -72,7 +72,7 @@ export default function ProfessionalFooter() {
 
           {/* Contact Info */}
           <div className="col-span-2 lg:col-span-1">
-            <h3 className="text-white font-semibold mb-3 text-base">Get In Touch</h3>
+            <h3 className="text-white font-semibold mb-3 text-xs">Get In Touch</h3>
             <div className="space-y-2.5">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-[#2DD4BF] mt-0.5 flex-shrink-0" />

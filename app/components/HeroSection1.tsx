@@ -9,7 +9,7 @@ export function HeroSection1() {
       {/* <Navbar /> */}
     
       <div className="px-4 py-10 md:py-20">
-        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-5xl font-bold text-gray-950 md:text-6xl lg:text-6xl">
+        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-5xl font-bold text-gray-950 md:text-6xl lg:text-[54px]">
           {"We Build Fast, Scalable Apps"
             .split(" ")
             .map((word, index) => (
