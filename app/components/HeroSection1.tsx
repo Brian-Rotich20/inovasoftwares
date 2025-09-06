@@ -78,7 +78,7 @@ export function HeroSection1() {
             </a>
         </motion.div>
         
-        {/* Dotted Background Section */}
+        {/* Dotted Background Section - Full Width */}
         <motion.div
           initial={{
             opacity: 0,
@@ -92,24 +92,24 @@ export function HeroSection1() {
             duration: 0.3,
             delay: 1.2,
           }}
-          className="relative z-10 mt-20"
+          className="relative z-10 mt-20 -mx-4 md:-mx-8 lg:-mx-12"
         >
-          {/* Dotted Background Container */}
-          <div className="relative flex min-h-[600px] w-full items-center justify-center bg-white rounded-3xl border">
+          {/* Full Width Dotted Background Container */}
+          <div className="relative flex min-h-[600px] w-screen items-center justify-center bg-white">
             {/* Dotted Background */}
             <div
               className={cn(
-                "absolute inset-0 rounded-3xl",
+                "absolute inset-0",
                 "[background-size:20px_20px]",
-                "[background-image:radial-gradient(#9ca3af_1.5px,transparent_1.5px)]",
+                "[background-image:radial-gradient(#d1d5db_1.5px,transparent_1.5px)]",
               )}
             />
-            {/* Radial gradient overlay for faded look - more subtle */}
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white/40 [mask-image:radial-gradient(ellipse_at_center,transparent_40%,black)] rounded-3xl"></div>
+            {/* Reduced radial gradient overlay for subtle faded look */}
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white/20 [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)]"></div>
             
-            {/* Centered Image with reduced width */}
-            <div className="relative z-20 w-full max-w-4xl px-8">
-              <div className="overflow-hidden rounded-xl border shadow-2xl">
+            {/* Centered Image */}
+            <div className="relative z-20 w-full max-w-5xl px-8">
+              <div className="overflow-hidden rounded-xl shadow-2xl">
                 <img
                   src="ecommerce.jpg"
                   alt="Landing page preview"
