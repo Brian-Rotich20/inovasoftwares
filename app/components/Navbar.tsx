@@ -42,10 +42,10 @@ export default function ProfessionalNavbar() {
             {/* Logo */}
           <div className="flex items-center space-x-2">
               <div className="flex flex-col items-center leading-none">
-                <span className={`text-3xl font-bold text-gray-900 ${logoFont.className}`}>
+                <span className={`text-2xl font-bold text-gray-900 ${logoFont.className}`}>
                   Inova
                 </span>
-                <span className="text-xs text-[#0D9488] font-normal -mt-1">
+                <span className="text-xs text-[#0D9488] font-normal -mt-2">
                   Softwares
                 </span>
               </div>
