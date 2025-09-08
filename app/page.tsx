@@ -6,7 +6,7 @@ import IndustriesWeServe from './components/IndustriesWeServe';
 import { HeroSection1 } from './components/HeroSection1';
 import { LoadingWrapper } from "./loading-wrapper";
 import WhyChooseUs from './components/WhyChooseUs';
-
+import CustomersSection from './components/Customers';
 
 export default function Home() {
 
@@ -59,6 +59,7 @@ export default function Home() {
       <ServicesSection />
       <WhyChooseUs />
       <IndustriesWeServe />
+      <CustomersSection />
       </LoadingWrapper>
        
        

@@ -7,8 +7,8 @@ const ContactPage: React.FC = () => {
     <div className="min-h-screen bg-gray-900 text-white" style={{ backgroundColor: '#111827' }}>
       {/* Header */}
       <div className="text-center pt-16 pb-8">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">Get In Touch</h1>
-        <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto px-4">
+        <h1 className="text-3xl md:text-6xl font-bold mb-6">Get In Touch</h1>
+        <p className="text-sm md:text-xl text-gray-300 max-w-4xl mx-auto px-4">
           We'd love to hear from you. Reach out to us for any inquiries, 
           <span className="text-teal-400"> support</span>, or 
           <span className="text-teal-400"> collaboration opportunities</span>.
@@ -21,7 +21,7 @@ const ContactPage: React.FC = () => {
           {/* Phone Card */}
           <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-3.5 hover:border-teal-500 transition-all duration-300">
             <div className="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-              <Phone className="w-6 h-6 text-white" />
+              <Phone className="w-5 h-5 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Phone</h3>
             <p className="text-gray-300">+254720060728</p>
@@ -30,7 +30,7 @@ const ContactPage: React.FC = () => {
           {/* Email Card */}
           <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-3.5 hover:border-teal-500 transition-all duration-300">
             <div className="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-              <Mail className="w-6 h-6 text-white" />
+              <Mail className="w-5 h-5 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Email</h3>
             <p className="text-gray-300 break-all">ralphrotich@gmail.com</p>
@@ -39,7 +39,7 @@ const ContactPage: React.FC = () => {
           {/* Location Card */}
           <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-3.5 hover:border-teal-500 transition-all duration-300">
             <div className="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-              <MapPin className="w-6 h-6 text-white" />
+              <MapPin className="w-5 h-5 text-white" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Location</h3>
             <p className="text-gray-300">Nairobi, Kenya</p>
@@ -47,7 +47,7 @@ const ContactPage: React.FC = () => {
 
         <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl p-3.5 hover:border-teal-500 transition-all duration-300">
           <div className="bg-green-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-            <FaWhatsapp className="w-6 h-6 text-white" />
+            <FaWhatsapp className="w-5 h-5 text-white" />
           </div>
           <h3 className="text-xl font-semibold mb-2">WhatsApp</h3>
           <p className="text-gray-300">+254720060728</p>

@@ -87,8 +87,8 @@ export default function ContactSection() {
     <section className="py-16 bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
+          <p className="text-base text-gray-300 max-w-2xl mx-auto">
             Ready to start your next project? Let’s bring your ideas to life with innovation and precision.
           </p>
         </div>
@@ -179,13 +179,13 @@ export default function ContactSection() {
               const Icon = item.icon
               return (
                 <div key={idx} className={`${item.bgColor} rounded-2xl p-5 border border-gray-700 flex items-start gap-4`}>
-                  <div className="w-10 h-10 rounded-xl bg-gray-700 flex items-center justify-center">
-                    <Icon className={`w-5 h-5 ${item.color}`} />
+                  <div className="w-7 h-7 rounded-xl bg-gray-700 flex items-center justify-center">
+                    <Icon className={`w-3 h-3 ${item.color}`} />
                   </div>
                   <div>
                     <h4 className="font-semibold text-white">{item.title}</h4>
                     <p className="text-gray-300">{item.info}</p>
-                    <p className="text-gray-500 text-sm">{item.subInfo}</p>
+                    <p className="text-gray-500 text-xs">{item.subInfo}</p>
                   </div>
                 </div>
               )
