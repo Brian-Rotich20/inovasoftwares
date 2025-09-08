@@ -53,7 +53,7 @@ export default function CustomersSection() {
           
           <Link
             href="/customers"
-            className="inline-flex items-center gap-2 bg-[#0D9488] hover:bg-[#0D9488]/90 text-white px-6 py-3 text-sm font-medium rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-[#0D9488]/25 group"
+            className="inline-flex items-center gap-2 bg-gray-950 hover:bg-gray-900/90 text-white px-6 py-3 text-sm font-medium rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-[#0D9488]/25 group"
           >
             Read All Customer Stories
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -129,7 +129,7 @@ export default function CustomersSection() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-transparent hover:bg-[#0D9488] text-[#0D9488] hover:text-white px-6 py-2 text-sm font-medium rounded-lg border-2 border-[#0D9488] transition-all duration-200 group"
+            className="inline-flex items-center gap-2 bg-transparent hover:bg-gray-900 text-gray-900 hover:text-white px-6 py-2 text-sm font-medium rounded-lg border-2 border-gray-900 transition-all duration-200 group"
           >
             Start Your Project
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

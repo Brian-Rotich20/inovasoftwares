@@ -169,7 +169,7 @@ export default function ProfessionalNavbar() {
             <div className="hidden lg:flex">
               <Link
                 href="/contact"
-                className="bg-[#0D9488] hover:bg-[#0D9488]/90 px-4 py-1.5 text-sm font-medium text-white rounded-lg transition-colors duration-200"
+                className="bg-gray-950 hover:bg-gray-900/90 px-4 py-1.5 text-sm font-medium text-white rounded-lg transition-colors duration-200"
               >
                 Get Started
               </Link>

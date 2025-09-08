@@ -58,7 +58,7 @@ export function HeroSection1() {
         >
             <a
             href="/contact"
-            className="w-40 transform rounded-lg bg-[#0D9488] hover:bg-[#0D9488]/90 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center"
+            className="w-40 transform rounded-lg bg-gray-950 hover:bg-gray-900 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center"
             >
             Get Started
             </a>

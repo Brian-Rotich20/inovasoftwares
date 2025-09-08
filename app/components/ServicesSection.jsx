@@ -80,7 +80,7 @@ export default function ServicesSection() {
             className="bg-white p-4 rounded-lg shadow-sm border border-gray-100"
           >
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-10 h-10 bg-gray-950 rounded-lg flex items-center justify-center">
                 {service.icon}
               </div>
               <div className="min-w-0">

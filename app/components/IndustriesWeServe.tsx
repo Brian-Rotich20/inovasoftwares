@@ -69,7 +69,7 @@ const industries = [
 
 export default function IndustriesWeServe() {
   return (
-    <section className="py-12 md:py-16 bg-slate-900 text-white">
+    <section className="py-12 md:py-16 bg-gray-950 text-white">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="text-center mb-10 md:mb-12">
           <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold mb-3 md:mb-4">
@@ -88,7 +88,7 @@ export default function IndustriesWeServe() {
                 key={index}
                 className="group flex flex-col items-center p-3 md:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer"
               >
-                <div className="w-6 h-6 md:w-10 md:h-10 mb-2 md:mb-3 p-1.5 md:p-2 bg-[#2DD4BF] rounded-lg group-hover:bg-brand transition-colors duration-300 flex items-center justify-center">
+                <div className="w-6 h-6 md:w-10 md:h-10 mb-2 md:mb-3 p-1.5 md:p-2 bg-gray-500 rounded-lg group-hover:bg-brand transition-colors duration-300 flex items-center justify-center">
                   <Icon className="w-full h-full text-white" />
                 </div>
                 <h3 className="text-white font-medium text-xs md:text-xs text-center leading-tight">
@@ -103,7 +103,7 @@ export default function IndustriesWeServe() {
           <p className="text-sm md:text-base text-slate-300 mb-6 md:mb-8">
             Don't see your industry? We adapt our expertise to meet unique business needs across all sectors.
           </p>
-          <button className="bg-brand hover:bg-[#2DD4BF] text-white px-5 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base">
+          <button className="bg-amber-100 hover:bg-amber-200 text-amber-800 px-5 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base">
             Discuss Your Project
           </button>
         </div>
