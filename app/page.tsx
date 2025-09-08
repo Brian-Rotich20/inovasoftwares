@@ -5,7 +5,8 @@ import ServicesSection from './components/ServicesSection';
 import IndustriesWeServe from './components/IndustriesWeServe';
 import { HeroSection1 } from './components/HeroSection1';
 import { LoadingWrapper } from "./loading-wrapper";
-import { WhyChooseUs } from "./components/ui/timeline";
+import WhyChooseUs from './components/WhyChooseUs';
+
 
 export default function Home() {
 
@@ -56,7 +57,7 @@ export default function Home() {
       </Head>
       <HeroSection1 />
       <ServicesSection />
-    <WhyChooseUs />
+      <WhyChooseUs />
       <IndustriesWeServe />
       </LoadingWrapper>
        

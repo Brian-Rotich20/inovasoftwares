@@ -23,10 +23,11 @@ export default function ProfessionalNavbar() {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
+    { name: 'Solutions', href: '/services' },
     { name: 'Projects', href: '/projects' },
-    { name: 'Prices', href: '/prices' },
-    { name: 'Contact', href: '/contact' },
+    {name: 'Customers', href: '/customers' },
+    { name: 'Pricing', href: '/prices' },
+   
   ]
 
   return (
