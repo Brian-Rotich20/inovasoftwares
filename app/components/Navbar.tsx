@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react'
 import localFont from 'next/font/local'
 
@@ -11,20 +12,32 @@ const logoFont = localFont({
 
 export default function ProfessionalNavbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false)
-  const [activeMobileDropdown, setActiveMobileDropdown] = useState(null)
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null)
 
   const solutionsItems = [
     {
       title: 'Custom Software Development',
       description: 'Tailored web, desktop, or mobile applications for businesses.',
+      href: '/services/custom-software',
       subitems: [
         {
           title: 'Web Solutions',
-          items: ['Website development (corporate, e-commerce, booking sites)', 'Web applications (SaaS platforms, dashboards)']
+          href: '/services/web-solutions',
+          items: [
+            { name: 'Website Development', href: '/services/website-development' },
+            { name: 'Web Applications', href: '/services/web-applications' }
+          ]
         },
         {
           title: 'Mobile App Development',
-          items: ['Business apps, e-commerce apps, booking apps, fintech apps, learning apps']
+          href: '/services/mobile-development',
+          items: [
+            { name: 'Business Apps', href: '/services/business-apps' },
+            { name: 'E-commerce Apps', href: '/services/ecommerce-apps' },
+            { name: 'Booking Apps', href: '/services/booking-apps' },
+            { name: 'Fintech Apps', href: '/services/fintech-apps' },
+            { name: 'Learning Apps', href: '/services/learning-apps' }
+          ]
         }
       ]
     }
@@ -45,8 +58,13 @@ export default function ProfessionalNavbar() {
     { name: 'Resources', href: '/resources', hasDropdown: true, dropdownItems: resourcesItems },
   ]
 
-  const toggleMobileDropdown = (itemName) => {
+  const toggleMobileDropdown = (itemName: string) => {
     setActiveMobileDropdown(activeMobileDropdown === itemName ? null : itemName)
+  }
+
+  const closeMobileMenu = () => {
+    setIsMobileOpen(false)
+    setActiveMobileDropdown(null)
   }
 
   return (
@@ -56,7 +74,7 @@ export default function ProfessionalNavbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
             {/* Logo - Clickable */}
-            <a href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+            <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
               <div className="flex flex-col items-center leading-none">
                 <span className={`text-xl font-bold text-gray-900 ${logoFont.className}`}>
                   Inova
@@ -65,20 +83,20 @@ export default function ProfessionalNavbar() {
                   Softwares
                 </span>
               </div>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center justify-center flex-1">
               <div className="flex items-center space-x-6">
                 {navItems.map((item) => (
                   <div key={item.name} className="relative group">
-                    <a
+                    <Link
                       href={item.href}
                       className="flex items-center text-sm text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 py-4"
                     >
                       {item.name}
                       {item.hasDropdown && <ChevronDown className="w-3 h-3 ml-1" />}
-                    </a>
+                    </Link>
                     
                     {/* Desktop Dropdown */}
                     {item.hasDropdown && (
@@ -88,21 +106,36 @@ export default function ProfessionalNavbar() {
                             <div className="space-y-4">
                               {solutionsItems.map((solution, index) => (
                                 <div key={index}>
-                                  <h3 className="text-sm font-semibold text-gray-900 mb-2">
-                                    {solution.title}
-                                  </h3>
-                                  <p className="text-xs text-gray-600 mb-3">
-                                    {solution.description}
-                                  </p>
+                                  <Link 
+                                    href={solution.href}
+                                    className="block hover:bg-gray-50 p-2 rounded-md transition-colors"
+                                  >
+                                    <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                                      {solution.title}
+                                    </h3>
+                                    <p className="text-xs text-gray-600 mb-2">
+                                      {solution.description}
+                                    </p>
+                                  </Link>
                                   {solution.subitems.map((subitem, subIndex) => (
-                                    <div key={subIndex} className="mb-3">
-                                      <h4 className="text-xs font-medium text-gray-800 mb-1">
-                                        {subitem.title}
-                                      </h4>
-                                      <ul className="space-y-1">
+                                    <div key={subIndex} className="mb-3 pl-2 border-l-2 border-gray-100">
+                                      <Link 
+                                        href={subitem.href}
+                                        className="block hover:bg-gray-50 p-1 rounded transition-colors"
+                                      >
+                                        <h4 className="text-xs font-medium text-gray-800 mb-1">
+                                          {subitem.title}
+                                        </h4>
+                                      </Link>
+                                      <ul className="space-y-1 ml-2">
                                         {subitem.items.map((item, itemIndex) => (
-                                          <li key={itemIndex} className="text-xs text-gray-600 pl-2">
-                                            • {item}
+                                          <li key={itemIndex}>
+                                            <Link 
+                                              href={item.href}
+                                              className="text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-50 block p-1 rounded transition-colors"
+                                            >
+                                              • {item.name}
+                                            </Link>
                                           </li>
                                         ))}
                                       </ul>
@@ -114,13 +147,13 @@ export default function ProfessionalNavbar() {
                           ) : (
                             <div className="space-y-1">
                               {resourcesItems.map((resource, index) => (
-                                <a
+                                <Link
                                   key={index}
                                   href={resource.href}
                                   className="block text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-2 py-2 rounded transition-colors"
                                 >
                                   {resource.name}
-                                </a>
+                                </Link>
                               ))}
                             </div>
                           )}
@@ -134,40 +167,67 @@ export default function ProfessionalNavbar() {
 
             {/* Desktop CTA Button */}
             <div className="hidden lg:flex">
-              <a
+              <Link
                 href="/contact"
                 className="bg-[#0D9488] hover:bg-[#0D9488]/90 px-4 py-1.5 text-sm font-medium text-white rounded-lg transition-colors duration-200"
               >
                 Get Started
-              </a>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMobileOpen(!isMobileOpen)}
-                className="text-gray-700 hover:text-gray-900 p-2 rounded-md transition-colors"
+                className="text-gray-700 hover:text-gray-900 p-2 rounded-md transition-colors z-60 relative"
               >
                 {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
+        </div>
+      </nav>
 
-          {/* Mobile Navigation Menu */}
-          {isMobileOpen && (
-            <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-xl">
-              <div className="px-4 py-4">
+      {/* Mobile Navigation Overlay */}
+      {isMobileOpen && (
+        <div className="lg:hidden fixed inset-0 z-40">
+          {/* Background overlay */}
+          <div 
+            className="absolute inset-0 bg-black/50 transition-opacity duration-300"
+            onClick={closeMobileMenu}
+          />
+          
+          {/* Slide-in menu */}
+          <div className={`absolute top-0 right-0 h-full w-3/4 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
+            isMobileOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}>
+            <div className="flex flex-col h-full">
+              {/* Header */}
+              <div className="flex items-center justify-between p-4 border-b border-gray-200">
+                <div className={`text-lg font-bold text-gray-900 ${logoFont.className}`}>
+                  Navigation
+                </div>
+                <button
+                  onClick={closeMobileMenu}
+                  className="p-2 text-gray-500 hover:text-gray-700 rounded-md transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Menu Content */}
+              <div className="flex-1 overflow-y-auto p-4">
                 <div className="space-y-0">
                   {navItems.map((item, index) => (
                     <div key={item.name}>
                       <div className="flex items-center justify-between">
-                        <a
+                        <Link
                           href={item.href}
-                          onClick={() => !item.hasDropdown && setIsMobileOpen(false)}
+                          onClick={() => !item.hasDropdown && closeMobileMenu()}
                           className="flex-1 block text-sm text-gray-700 hover:text-gray-900 font-medium py-3 px-2 hover:bg-gray-50 rounded-md transition-all duration-200"
                         >
                           {item.name}
-                        </a>
+                        </Link>
                         {item.hasDropdown && (
                           <button
                             onClick={() => toggleMobileDropdown(item.name)}
@@ -180,26 +240,42 @@ export default function ProfessionalNavbar() {
                       
                       {/* Mobile Dropdown Content */}
                       {item.hasDropdown && activeMobileDropdown === item.name && (
-                        <div className="ml-4 pb-2">
+                        <div className="ml-2 pb-2 border-l-2 border-gray-100 pl-3">
                           {item.name === 'Solutions' ? (
                             <div className="space-y-3">
                               {solutionsItems.map((solution, sIndex) => (
                                 <div key={sIndex} className="bg-gray-50 p-3 rounded">
-                                  <h4 className="text-xs font-semibold text-gray-900 mb-1">
-                                    {solution.title}
-                                  </h4>
-                                  <p className="text-xs text-gray-600 mb-2">
-                                    {solution.description}
-                                  </p>
+                                  <Link 
+                                    href={solution.href}
+                                    onClick={closeMobileMenu}
+                                    className="block hover:bg-white p-2 rounded transition-colors"
+                                  >
+                                    <h4 className="text-xs font-semibold text-gray-900 mb-1">
+                                      {solution.title}
+                                    </h4>
+                                    <p className="text-xs text-gray-600">
+                                      {solution.description}
+                                    </p>
+                                  </Link>
                                   {solution.subitems.map((subitem, subIndex) => (
-                                    <div key={subIndex} className="mb-2">
-                                      <h5 className="text-xs font-medium text-gray-800 mb-1">
+                                    <div key={subIndex} className="mt-2 ml-2">
+                                      <Link
+                                        href={subitem.href}
+                                        onClick={closeMobileMenu}
+                                        className="block text-xs font-medium text-gray-800 hover:text-gray-900 py-1 hover:bg-white rounded px-2 transition-colors"
+                                      >
                                         {subitem.title}
-                                      </h5>
-                                      <ul className="space-y-1">
+                                      </Link>
+                                      <ul className="ml-3 mt-1 space-y-1">
                                         {subitem.items.map((item, itemIndex) => (
-                                          <li key={itemIndex} className="text-xs text-gray-600 pl-2">
-                                            • {item}
+                                          <li key={itemIndex}>
+                                            <Link
+                                              href={item.href}
+                                              onClick={closeMobileMenu}
+                                              className="block text-xs text-gray-600 hover:text-gray-900 py-1 px-2 hover:bg-white rounded transition-colors"
+                                            >
+                                              • {item.name}
+                                            </Link>
                                           </li>
                                         ))}
                                       </ul>
@@ -211,14 +287,14 @@ export default function ProfessionalNavbar() {
                           ) : (
                             <div className="space-y-1">
                               {resourcesItems.map((resource, rIndex) => (
-                                <a
+                                <Link
                                   key={rIndex}
                                   href={resource.href}
-                                  onClick={() => setIsMobileOpen(false)}
+                                  onClick={closeMobileMenu}
                                   className="block text-xs text-gray-600 hover:text-gray-900 py-2 px-2 hover:bg-gray-50 rounded transition-colors"
                                 >
                                   {resource.name}
-                                </a>
+                                </Link>
                               ))}
                             </div>
                           )}
@@ -226,35 +302,28 @@ export default function ProfessionalNavbar() {
                       )}
                       
                       {index < navItems.length - 1 && (
-                        <hr className="border-gray-200" />
+                        <hr className="border-gray-200 my-2" />
                       )}
                     </div>
                   ))}
                 </div>
+              </div>
 
-                {/* Mobile CTA Button */}
-                <div className="mt-4 pt-4 border-t border-gray-200">
-                  <button 
-                    onClick={() => setIsMobileOpen(false)}
-                    className="w-full flex items-center justify-center space-x-2 bg-[#0D9488] hover:bg-[#0D9488]/90 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-200"
-                  >
-                    <span>Get Started</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
+              {/* Footer CTA */}
+              <div className="p-4 border-t border-gray-200">
+                <Link 
+                  href="/contact"
+                  onClick={closeMobileMenu}
+                  className="w-full flex items-center justify-center space-x-2 bg-[#0D9488] hover:bg-[#0D9488]/90 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-200"
+                >
+                  <span>Get Started</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
-          )}
+          </div>
         </div>
-
-        {/* Mobile Overlay */}
-        {isMobileOpen && (
-          <div 
-            className="lg:hidden fixed inset-0 bg-black/20 z-30 top-14"
-            onClick={() => setIsMobileOpen(false)}
-          ></div>
-        )}
-      </nav>
+      )}
 
       {/* Spacer */}
       <div className="h-14"></div>
