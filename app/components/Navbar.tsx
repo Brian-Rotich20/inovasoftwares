@@ -169,7 +169,7 @@ export default function ProfessionalNavbar() {
             <div className="hidden lg:flex">
               <Link
                 href="/contact"
-                className="bg-gray-950 hover:bg-gray-900/90 px-4 py-1.5 text-sm font-medium text-white rounded-lg transition-colors duration-200"
+                className="bg-white hover:bg-white/90 px-4 py-1.5 text-sm font-medium text-gray-950 rounded-lg transition-colors duration-200"
               >
                 Get Started
               </Link>
@@ -314,7 +314,7 @@ export default function ProfessionalNavbar() {
                 <Link 
                   href="/contact"
                   onClick={closeMobileMenu}
-                  className="w-full flex items-center justify-center space-x-2 bg-[#0D9488] hover:bg-[#0D9488]/90 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-200"
+                  className="w-full flex items-center justify-center space-x-2 bg-white hover:bg-white/90 text-gray-950 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200"
                 >
                   <span>Get Started</span>
                   <ArrowRight className="w-4 h-4" />
