@@ -28,9 +28,9 @@ export function HeroSection1() {
   }
 
   return (
-    <div className="relative bg-gray-950 mx-auto my-10 flex max-w-7xl flex-col items-center justify-center">
+    <div className="relative bg-[#111827] mx-auto my-10 flex max-w-7xl flex-col items-center justify-center">
       <div className="px-4 py-10 md:py-20">
-        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-3xl font-bold text-gray-950 md:text-6xl lg:text-[54px]">
+        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-3xl font-bold text-white md:text-6xl lg:text-[54px]">
           {"We Build Fast, Scalable Apps"
             .split(" ")
             .map((word, index) => (
@@ -53,7 +53,7 @@ export function HeroSection1() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.8 }}
-          className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-800"
+          className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-white"
         >
           Custom software solutions engineered for performance, security, and scalability. Trusted by businesses worldwide.
         </motion.p>
@@ -106,7 +106,7 @@ export function HeroSection1() {
                   "[background-image:radial-gradient(#d1d5db_1.5px,transparent_1.5px)]",
                 )}
               />
-              <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white/20 [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)]"></div>
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-[#111827] [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)]"></div>
               
               <div className="relative z-20 w-full max-w-5xl px-8">
                 <div className="overflow-hidden rounded-xl shadow-2xl">
