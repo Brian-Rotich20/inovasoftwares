@@ -64,11 +64,11 @@ export default function ServicesSection() {
   return (
     <section id="services" className="py-8 px-4 max-w-5xl mx-auto">
       <div className="text-center mb-6">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
           Solutions & Technologies
         </h2>
         <div className="w-16 h-0.5 bg-teal-400 mx-auto mb-3"></div>
-        <p className="text-gray-600 text-sm max-w-xl mx-auto">
+        <p className="text-white text-sm max-w-xl mx-auto">
           Using latest technologies, we deliver quality, reliable and scalable solutions to transform your business.
         </p>
       </div>

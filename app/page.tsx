@@ -4,7 +4,6 @@ import Head from 'next/head';
 import ServicesSection from './components/ServicesSection';
 import IndustriesWeServe from './components/IndustriesWeServe';
 import { HeroSection1 } from './components/HeroSection1';
-import { LoadingWrapper } from "./loading-wrapper";
 import WhyChooseUs from './components/WhyChooseUs';
 import CustomersSection from './components/Customers';
 
@@ -14,7 +13,7 @@ export default function Home() {
   
   return (
     <>
-    <LoadingWrapper>
+    
       <Head>
         <title>Inova Softwares</title>
         <meta name="description" content="Professional web and software solutions tailored for modern businesses." />
@@ -60,7 +59,7 @@ export default function Home() {
       <WhyChooseUs />
       <IndustriesWeServe />
       <CustomersSection />
-      </LoadingWrapper>
+      
        
        
     </>
