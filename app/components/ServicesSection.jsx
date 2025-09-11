@@ -67,7 +67,7 @@ export default function ServicesSection() {
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
           Solutions & Technologies
         </h2>
-        <div className="w-16 h-0.5 bg-teal-400 mx-auto mb-3"></div>
+        <div className="w-16 h-0.5 bg-white mx-auto mb-3"></div>
         <p className="text-white text-sm max-w-xl mx-auto">
           Using latest technologies, we deliver quality, reliable and scalable solutions to transform your business.
         </p>

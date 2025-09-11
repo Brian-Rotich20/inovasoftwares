@@ -15,32 +15,23 @@ export default function ProfessionalNavbar() {
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null)
 
   const solutionsItems = [
-    {
-      title: 'Custom Software Development',
-      description: 'Tailored web, desktop, or mobile applications for businesses.',
-      href: '/services/custom-software',
-      subitems: [
+      {
+        title: 'Custom Software Development',
+        description: 'Tailored web, desktop, or mobile applications for businesses.',
+        href: '/services/custom-software',
+      },
         {
           title: 'Web Solutions',
+          description: 'Bespoke web applications to streamline your operations.',
           href: '/services/web-solutions',
-          items: [
-            { name: 'Website Development', href: '/services/website-development' },
-            { name: 'Web Applications', href: '/services/web-applications' }
-          ]
+
         },
         {
           title: 'Mobile App Development',
+          description: 'iOS and Android apps designed for performance and user experience.',
           href: '/services/mobile-development',
-          items: [
-            { name: 'Business Apps', href: '/services/business-apps' },
-            { name: 'E-commerce Apps', href: '/services/ecommerce-apps' },
-            { name: 'Booking Apps', href: '/services/booking-apps' },
-            { name: 'Fintech Apps', href: '/services/fintech-apps' },
-            { name: 'Learning Apps', href: '/services/learning-apps' }
-          ]
+         
         }
-      ]
-    }
   ]
 
   const resourcesItems = [
@@ -117,30 +108,7 @@ export default function ProfessionalNavbar() {
                                       {solution.description}
                                     </p>
                                   </Link>
-                                  {solution.subitems.map((subitem, subIndex) => (
-                                    <div key={subIndex} className="mb-3 pl-2 border-l-2 border-gray-100">
-                                      <Link 
-                                        href={subitem.href}
-                                        className="block hover:bg-gray-50 p-1 rounded transition-colors"
-                                      >
-                                        <h4 className="text-xs font-medium text-gray-800 mb-1">
-                                          {subitem.title}
-                                        </h4>
-                                      </Link>
-                                      <ul className="space-y-1 ml-2">
-                                        {subitem.items.map((item, itemIndex) => (
-                                          <li key={itemIndex}>
-                                            <Link 
-                                              href={item.href}
-                                              className="text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-50 block p-1 rounded transition-colors"
-                                            >
-                                              • {item.name}
-                                            </Link>
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                  ))}
+
                                 </div>
                               ))}
                             </div>
@@ -244,43 +212,19 @@ export default function ProfessionalNavbar() {
                           {item.name === 'Solutions' ? (
                             <div className="space-y-3">
                               {solutionsItems.map((solution, sIndex) => (
-                                <div key={sIndex} className="bg-gray-50 p-3 rounded">
+                                <div key={sIndex} className="bg-gray-900 p-3 rounded">
                                   <Link 
                                     href={solution.href}
                                     onClick={closeMobileMenu}
                                     className="block hover:bg-white p-2 rounded transition-colors"
                                   >
-                                    <h4 className="text-xs font-semibold text-white-900 mb-1">
+                                    <h4 className="text-xs font-semibold text-white  mb-1">
                                       {solution.title}
                                     </h4>
-                                    <p className="text-xs text-gray-600">
+                                    <p className="text-xs text-white/90">
                                       {solution.description}
                                     </p>
                                   </Link>
-                                  {solution.subitems.map((subitem, subIndex) => (
-                                    <div key={subIndex} className="mt-2 ml-2">
-                                      <Link
-                                        href={subitem.href}
-                                        onClick={closeMobileMenu}
-                                        className="block text-xs font-medium text-white hover:text-gray-900 py-1 hover:bg-white rounded px-2 transition-colors"
-                                      >
-                                        {subitem.title}
-                                      </Link>
-                                      <ul className="ml-3 mt-1 space-y-1">
-                                        {subitem.items.map((item, itemIndex) => (
-                                          <li key={itemIndex}>
-                                            <Link
-                                              href={item.href}
-                                              onClick={closeMobileMenu}
-                                              className="block text-xs text-white hover:text-gray-900 py-1 px-2 hover:bg-white rounded transition-colors"
-                                            >
-                                              • {item.name}
-                                            </Link>
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                  ))}
                                 </div>
                               ))}
                             </div>
