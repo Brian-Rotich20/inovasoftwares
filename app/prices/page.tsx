@@ -3,8 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { 
   Code, Check, ChevronDown, ChevronRight, Star, Shield, 
-  Zap, BarChart3, Users, Globe, Search, TrendingUp,
-  CreditCard, Smartphone, DollarSign, ArrowRight, Package
+  Globe, TrendingUp, Smartphone, ArrowRight, Package
 } from 'lucide-react';
 
 export default function PricingPage() {
@@ -154,7 +153,7 @@ export default function PricingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[111827]">
       {/* Header */}
       
 
@@ -164,41 +163,34 @@ export default function PricingPage() {
 
         {/* Website Development Pricing */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Website Development</h2>
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">Website Development</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {webDevelopmentPlans.map((plan, index) => (
-              <div key={index} className={`bg-white rounded-lg shadow-lg border-2 ${
-                plan.popular ? 'border-yellow-500 transform scale-105' : 'border-gray-200'
+              <div key={index} className={`bg-gray-800 rounded-lg shadow-lg border-2 ${
+                plan.popular ? 'border-brand transform scale-105' : 'border-gray-200'
               } relative`}>
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-yellow-500 text-white px-3 py-1 text-xs font-bold rounded-full">
+                    <span className="bg-brand text-white px-3 py-1 text-xs font-bold rounded-full">
                       MOST POPULAR
                     </span>
                   </div>
                 )}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{plan.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
+                  <p className="text-sm text-white mb-4">{plan.description}</p>
                   <div className="mb-6">
-                    <span className="text-3xl font-bold text-gray-900">{plan.price}</span>
-                    <span className="text-sm text-gray-600 ml-1">{plan.period}</span>
+                    <span className="text-3xl font-bold text-white">{plan.price}</span>
+                    <span className="text-sm text-white ml-1">{plan.period}</span>
                   </div>
                   <ul className="space-y-2 mb-6">
                     {plan.features.map((feature, fIndex) => (
                       <li key={fIndex} className="flex items-center space-x-2">
-                        <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{feature}</span>
+                        <Check className="w-4 h-4 text-brand flex-shrink-0" />
+                        <span className="text-sm text-white">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <button className={`w-full py-2 px-4 rounded-lg font-medium transition-colors ${
-                    plan.popular 
-                      ? 'bg-yellow-600 hover:bg-yellow-700 text-white' 
-                      : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
-                  }`}>
-                    Get Started
-                  </button>
                 </div>
               </div>
             ))}
@@ -208,24 +200,24 @@ export default function PricingPage() {
 
         {/* Digital Marketing Services */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Digital Marketing Services</h2>
-          <p className="text-center text-gray-600 mb-6">What we do for you in digital marketing</p>
+          <h2 className="text-2xl font-bold text-white mb-4 text-center">Digital Marketing Services</h2>
+          <p className="text-center text-white mb-6">What we do for you in digital marketing</p>
           <div className="grid md:grid-cols-3 gap-6">
             {digitalMarketingServices.map((service, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-sm p-6">
+              <div key={index} className="bg-gray-800 rounded-lg shadow-sm p-6">
                 <div className="flex items-center space-x-2 mb-3">
-                  <TrendingUp className="w-5 h-5 text-blue-600" />
-                  <h3 className="text-lg font-semibold text-gray-900">{service.name}</h3>
+                  <TrendingUp className="w-5 h-5 text-white" />
+                  <h3 className="text-lg font-semibold text-white">{service.name}</h3>
                 </div>
                 <div className="mb-4">
-                  <span className="text-2xl font-bold text-gray-900">{service.price}</span>
-                  <span className="text-sm text-gray-600 ml-1">{service.period}</span>
+                  <span className="text-2xl font-bold text-white">{service.price}</span>
+                  <span className="text-sm text-white ml-1">{service.period}</span>
                 </div>
                 <ul className="space-y-2">
                   {service.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-center space-x-2">
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">{feature}</span>
+                      <Check className="w-4 h-4 text-brand flex-shrink-0" />
+                      <span className="text-sm text-white">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -236,14 +228,14 @@ export default function PricingPage() {
 
         {/* Other Services */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Other Services</h2>
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">Other Services</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {otherServices.map((service, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-sm p-4 flex items-center space-x-3">
-                <service.icon className="w-6 h-6 text-blue-600 flex-shrink-0" />
+              <div key={index} className="bg-gray-800 rounded-lg shadow-sm p-4 flex items-center space-x-3">
+                <service.icon className="w-6 h-6 text-brand flex-shrink-0" />
                 <div>
-                  <h3 className="font-medium text-gray-900">{service.name}</h3>
-                  <p className="text-sm text-gray-600">{service.price}</p>
+                  <h3 className="font-medium text-white">{service.name}</h3>
+                  <p className="text-sm text-white">{service.price}</p>
                 </div>
               </div>
             ))}
@@ -252,12 +244,12 @@ export default function PricingPage() {
 
         {/* Common Websites */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Most Common Required Websites</h2>
-          <div className="bg-white rounded-lg shadow-sm p-6">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">Most Common Required Websites</h2>
+          <div className="bg-gray-800 rounded-lg shadow-sm p-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {commonWebsites.map((website, index) => (
-                <div key={index} className="flex items-center space-x-2 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
-                  <ChevronRight className="w-4 h-4 text-yellow-600" />
+                <div key={index} className="flex items-center space-x-2 p-2 bg-white/90 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                  <ChevronRight className="w-4 h-4 text-brand" />
                   <span className="text-sm font-medium text-gray-700">{website}</span>
                 </div>
               ))}
@@ -267,21 +259,21 @@ export default function PricingPage() {
 
         {/* FAQ Section */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Frequently Asked Questions</h2>
-          <div className="bg-white rounded-lg shadow-sm divide-y divide-gray-200">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">Frequently Asked Questions</h2>
+          <div className="bg-gray-800 rounded-lg shadow-sm divide-y divide-gray-200">
             {faqs.map((faq, index) => (
               <div key={index} className="p-4">
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full flex items-center justify-between text-left"
                 >
-                  <span className="font-medium text-gray-900">{faq.question}</span>
-                  <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform ${
+                  <span className="font-medium text-white">{faq.question}</span>
+                  <ChevronDown className={`w-5 h-5 text-white transition-transform ${
                     openFaq === index ? 'rotate-180' : ''
                   }`} />
                 </button>
                 {openFaq === index && (
-                  <div className="mt-3 text-sm text-gray-600">
+                  <div className="mt-3 text-sm text-white">
                     {faq.answer}
                   </div>
                 )}
@@ -291,15 +283,15 @@ export default function PricingPage() {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg p-8 text-center text-white">
+        <div className="bg-gradient-to-r from-gray-800 to-gray-850 rounded-lg p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-2">Ready to Get Started?</h2>
           <p className="mb-6">Contact us today for a free consultation and custom quote</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-yellow-600 px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
+            <button className="bg-white text-brand px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
               <span>Get Free Quote</span>
               <ArrowRight className="w-4 h-4" />
             </button>
-            <button className="border-2 border-white text-white px-6 py-2 rounded-lg font-medium hover:bg-white hover:text-yellow-600 transition-colors">
+            <button className="border-2 border-white text-brand px-6 py-2 rounded-lg font-medium hover:bg-white hover:text-brand transition-colors">
               Schedule Consultation
             </button>
           </div>
