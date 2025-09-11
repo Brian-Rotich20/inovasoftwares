@@ -179,7 +179,7 @@ export default function ProfessionalNavbar() {
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMobileOpen(!isMobileOpen)}
-                className="text-gray-700 hover:text-gray-900 p-2 rounded-md transition-colors z-60 relative"
+                className="text-white hover:text-white/90 p-2 rounded-md transition-colors z-60 relative"
               >
                 {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -190,7 +190,7 @@ export default function ProfessionalNavbar() {
 
       {/* Mobile Navigation Overlay */}
       {isMobileOpen && (
-        <div className="lg:hidden fixed inset-0 z-40">
+        <div className="lg:hidden fixed inset-0 z-50">
           {/* Background overlay */}
           <div 
             className="absolute inset-0 bg-black/50 transition-opacity duration-300"
@@ -198,14 +198,14 @@ export default function ProfessionalNavbar() {
           />
           
           {/* Slide-in menu */}
-          <div className={`absolute top-0 right-0 h-full w-3/4 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
+          <div className={`absolute top-0 right-0 h-full w-3/4 bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-in-out ${
             isMobileOpen ? 'translate-x-0' : 'translate-x-full'
           }`}>
             <div className="flex flex-col h-full">
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b border-gray-200">
-                <div className={`text-lg font-bold text-gray-900 ${logoFont.className}`}>
-                  Navigation
+                <div className={`text-lg font-bold text-white ${logoFont.className}`}>
+                  Inova
                 </div>
                 <button
                   onClick={closeMobileMenu}
@@ -224,14 +224,14 @@ export default function ProfessionalNavbar() {
                         <Link
                           href={item.href}
                           onClick={() => !item.hasDropdown && closeMobileMenu()}
-                          className="flex-1 block text-sm text-gray-700 hover:text-gray-900 font-medium py-3 px-2 hover:bg-gray-50 rounded-md transition-all duration-200"
+                          className="flex-1 block text-sm text-white hover:text-gray-900 font-medium py-3 px-2 hover:bg-gray-50 rounded-md transition-all duration-200"
                         >
                           {item.name}
                         </Link>
                         {item.hasDropdown && (
                           <button
                             onClick={() => toggleMobileDropdown(item.name)}
-                            className="p-2 text-gray-500 hover:text-gray-700"
+                            className="p-2 text-white hover:text-white/90"
                           >
                             <ChevronDown className={`w-4 h-4 transition-transform ${activeMobileDropdown === item.name ? 'rotate-180' : ''}`} />
                           </button>
@@ -250,7 +250,7 @@ export default function ProfessionalNavbar() {
                                     onClick={closeMobileMenu}
                                     className="block hover:bg-white p-2 rounded transition-colors"
                                   >
-                                    <h4 className="text-xs font-semibold text-gray-900 mb-1">
+                                    <h4 className="text-xs font-semibold text-white-900 mb-1">
                                       {solution.title}
                                     </h4>
                                     <p className="text-xs text-gray-600">
@@ -262,7 +262,7 @@ export default function ProfessionalNavbar() {
                                       <Link
                                         href={subitem.href}
                                         onClick={closeMobileMenu}
-                                        className="block text-xs font-medium text-gray-800 hover:text-gray-900 py-1 hover:bg-white rounded px-2 transition-colors"
+                                        className="block text-xs font-medium text-white hover:text-gray-900 py-1 hover:bg-white rounded px-2 transition-colors"
                                       >
                                         {subitem.title}
                                       </Link>
@@ -272,7 +272,7 @@ export default function ProfessionalNavbar() {
                                             <Link
                                               href={item.href}
                                               onClick={closeMobileMenu}
-                                              className="block text-xs text-gray-600 hover:text-gray-900 py-1 px-2 hover:bg-white rounded transition-colors"
+                                              className="block text-xs text-white hover:text-gray-900 py-1 px-2 hover:bg-white rounded transition-colors"
                                             >
                                               • {item.name}
                                             </Link>
@@ -291,7 +291,7 @@ export default function ProfessionalNavbar() {
                                   key={rIndex}
                                   href={resource.href}
                                   onClick={closeMobileMenu}
-                                  className="block text-xs text-gray-600 hover:text-gray-900 py-2 px-2 hover:bg-gray-50 rounded transition-colors"
+                                  className="block text-xs text-white hover:text-gray-900 py-2 px-2 hover:bg-gray-50 rounded transition-colors"
                                 >
                                   {resource.name}
                                 </Link>
