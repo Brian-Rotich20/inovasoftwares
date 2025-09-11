@@ -212,7 +212,7 @@ export default function ProfessionalNavbar() {
                           {item.name === 'Solutions' ? (
                             <div className="space-y-3">
                               {solutionsItems.map((solution, sIndex) => (
-                                <div key={sIndex} className="bg-gray-900 p-3 rounded">
+                                <div key={sIndex} className="bg-gray-900 rounded">
                                   <Link 
                                     href={solution.href}
                                     onClick={closeMobileMenu}
