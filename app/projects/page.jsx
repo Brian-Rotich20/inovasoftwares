@@ -13,7 +13,6 @@ const ProjectShowcase = () => {
       image: '/shop2.png',
       github: 'https://github.com/Brian-Rotich20/Django-Shop-With-RF',
       live: 'https://frontend-shop-xi.vercel.app',
-      status: 'completed',
       tech: ['React', 'Next.js', 'Tailwind CSS', 'Django', 'PostgreSQL'],
       category: 'Full Stack'
     },
@@ -24,7 +23,6 @@ const ProjectShowcase = () => {
       image: '/inventory.png',
       github: 'https://github.com/Brian-Rotich20/Sales-Inventory-System',
       live: null,
-      status: 'completed',
       tech: ['PHP', 'HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
       category: 'Web Application'
     },
@@ -35,7 +33,6 @@ const ProjectShowcase = () => {
       image: '/blog.jpeg',
       github: 'https://github.com/Brian-Rotich20/django-blog',
       live: null,
-      status: 'pending',
       tech: ['Django', 'Tailwind CSS'],
       category: 'CMS'
     },
@@ -46,7 +43,6 @@ const ProjectShowcase = () => {
       image: '/lyrebird.png',
       github: 'https://github.com/Brian-Rotich20/lyrebird-graphics',
       live: 'https://lyrebird-graphics.netlify.app/',
-      status: 'completed',
       tech: ['HTML5', 'CSS3', 'JavaScript'],
       category: 'Portfolio'
     },
@@ -57,7 +53,6 @@ const ProjectShowcase = () => {
       image: '/travel.png',
       github: 'https://github.com/Brian-Rotich20/Travel-Website',
       live: 'https://inovatravels.netlify.app/',
-      status: 'completed',
       tech: ['React', 'Django'],
       category: 'Booking Platform'
     },
@@ -68,7 +63,6 @@ const ProjectShowcase = () => {
       image: '/facols.png',
       github: null,
       live: 'https://facols.com',
-      status: 'completed',
       tech: ['WooCommerce', 'Elementor'],
       category: 'E-commerce'
     }
@@ -77,14 +71,14 @@ const ProjectShowcase = () => {
   const currentProject = projects[selectedProject];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-[#0D9488] to-slate-900 text-white">
+    <div className="min-h-screen bg-[#111827] text-white">
       {/* Header */}
       <div className="container mx-auto px-6 pt-12">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Our Projects
           </h1>
-          <p className="text-xl text-slate-200 max-w-2xl mx-auto">
+          <p className="text-base text-slate-200 max-w-2xl mx-auto">
             Showcasing innovative solutions and cutting-edge applications we've built
           </p>
         </div>
@@ -93,12 +87,12 @@ const ProjectShowcase = () => {
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {/* Project Image */}
           <div className="relative group cursor-pointer">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-[#0D9488] rounded-2xl blur opacity-25 group-hover:opacity-40 transition-opacity"></div>
+            <div className="absolute inset-0 group-hover:opacity-40 transition-opacity"></div>
             <div className="relative bg-slate-800 rounded-2xl overflow-hidden border border-slate-700">
               <img
                 src={currentProject.image}
                 alt={currentProject.title}
-                className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute top-4 left-4 z-10 transition-all duration-300 group-hover:scale-95">
                 <span className="px-3 py-1 text-sm font-medium bg-slate-900/80 rounded-full backdrop-blur-sm">
@@ -120,39 +114,26 @@ const ProjectShowcase = () => {
               <span className="px-3 py-1 text-sm font-medium bg-slate-700 rounded-full">
                 {currentProject.category}
               </span>
-              <div className="flex items-center gap-2">
-                {currentProject.status === 'completed' ? (
-                  <>
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-green-400 font-medium">Completed</span>
-                  </>
-                ) : (
-                  <>
-                    <Clock className="w-5 h-5 text-yellow-400" />
-                    <span className="text-yellow-400 font-medium">In Progress</span>
-                  </>
-                )}
-              </div>
             </div>
 
-            <h2 className="text-4xl font-bold leading-tight">
+            <h2 className="text-3xl font-bold leading-tight">
               {currentProject.title}
             </h2>
 
-            <p className="text-lg text-slate-300 leading-relaxed">
+            <p className="text-base text-slate-300 leading-relaxed">
               {currentProject.description}
             </p>
 
             {/* Tech Stack */}
             <div>
-              <h3 className="text-sm font-medium text-slate-200 mb-3">
+              <h3 className="text-xs font-medium text-slate-200 mb-3">
                 Tech Stack
               </h3>
               <div className="flex flex-wrap gap-2">
                 {currentProject.tech.map((tech, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 text-sm bg-slate-700/50 border border-slate-600 rounded-full"
+                    className="px-3 py-1 text-xs bg-slate-700/50 border border-slate-600 rounded-full"
                   >
                     {tech}
                   </span>
@@ -201,7 +182,7 @@ const ProjectShowcase = () => {
                 onClick={() => setSelectedProject(index)}
                 className={`p-4 rounded-xl cursor-pointer transition-all ${
                   selectedProject === index
-                    ? 'bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-blue-500'
+                    ? 'bg-[#111827]'
                     : 'bg-slate-700/30 hover:bg-slate-700/50 border-slate-600'
                 } border`}
               >
