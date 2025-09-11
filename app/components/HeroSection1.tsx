@@ -1,31 +1,12 @@
+// components/HeroSection1.tsx
 "use client";
 
 import { motion } from "motion/react";
 import { cn } from "../lib/utils";
-import { useTransition, useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import LoadingSpinner from './LoaderSpinner';
+import { useLoading } from "../contexts/LoadingContext";
 
 export function HeroSection1() {
-  const router = useRouter();
-  const [isPending, startTransition] = useTransition();
-  const [showLoading, setShowLoading] = useState(false);
-
-  const handleNavigation = (href: string) => {
-    setShowLoading(true);
-    
-    // 6 second delay before navigation
-    setTimeout(() => {
-      startTransition(() => {
-        router.push(href);
-      });
-      setShowLoading(false);
-    }, 6000);
-  };
-
-  if (showLoading || isPending) {
-    return <LoadingSpinner />;
-  }
+  const { navigate } = useLoading();
 
   return (
     <div className="relative bg-[#111827] mx-auto my-10 flex max-w-7xl flex-col items-center justify-center">
@@ -64,13 +45,13 @@ export function HeroSection1() {
           className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
         >
           <button
-            onClick={() => handleNavigation('/contact')}
+            onClick={() => navigate('/contact')}
             className="w-40 transform rounded-lg bg-gray-950 hover:bg-gray-900 px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center"
           >
             Get Started
           </button>
           <button
-            onClick={() => handleNavigation('/projects')}
+            onClick={() => navigate('/projects')}
             className="w-40 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-gray-900 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 flex items-center justify-center"
           >
             View Projects

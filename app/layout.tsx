@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import localFont from 'next/font/local'
 import { Roboto } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { LoadingProvider } from "./contexts/LoadingContext";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -77,16 +78,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={satoshi.variable}>
-      <body
-        
-      >
-         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <Navbar />
-        {children}
-       
-        <Footer/>
-      </ThemeProvider>
+    <html lang="en" className={`${satoshi.variable} ${geistMono.variable} ${logoFont.variable} ${roboto.variable}`}>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <LoadingProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </ LoadingProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
