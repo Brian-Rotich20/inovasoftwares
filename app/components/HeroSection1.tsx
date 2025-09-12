@@ -11,7 +11,7 @@ export function HeroSection1() {
   return (
     <div className="relative bg-[#111827] mx-auto my-10 flex max-w-7xl flex-col items-center justify-center">
       <div className="px-4 py-10 md:py-20">
-        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-3xl font-bold text-white md:text-6xl lg:text-[54px]">
+        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-4xl font-bold text-white md:text-6xl lg:text-[54px]">
           {"We Build Fast, Scalable Apps"
             .split(" ")
             .map((word, index) => (
@@ -45,8 +45,8 @@ export function HeroSection1() {
       <div className="absolute inset-0 bg-gray-700 transform skew-x-12 rounded-md"></div>
       
       {/* Text content */}
-      <span className="relative z-10 px-6 py-2 text-3xl font-semibold text-brand md:text-6xl lg:text-[54px]">
-        Trusted By Most Brands
+      <span className="relative z-10 px-6 py-2 text-4xl font-semibold text-brand md:text-6xl lg:text-[54px]">
+        Trusted By Innovators
       </span>
     </motion.div>
   </div>
