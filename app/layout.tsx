@@ -35,7 +35,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: 'Inova Softwares: Software Company in Nairobi, Kenya',
-  description: 'Your modern software partner.',
+  description: 'Innovating Kenyan Businesses with Modern Software.',
   keywords: ['inova', 'software company', 'web development', 'full-stack developers', 'Mobile Applications', 'Nairobi', 'Kenya', 'software solutions', 'custom software', 'web applications', 'mobile apps', 'software development',
                'IT solutions', 'digital transformation', 'Leading software company', 'software engineering', 'technology solutions', 'business software', 'enterprise applications', 'cloud solutions', 'AI development', 'machine learning',
                 'data analytics', 'e-commerce solutions', 'SaaS development', 'API development', 'software consulting', 'UI/UX design', 'agile development', 'DevOps services', 'cybersecurity solutions', 
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Inova Team' }],
   openGraph: {
     title: 'Inova Softwares',
-    description: 'Your modern software partner.',
+    description: 'Innovating Kenyan Businesses with Modern Software.',
     url: 'https://inovasoftwares.co.ke',
     siteName: 'Inova Softwares',
     images: [

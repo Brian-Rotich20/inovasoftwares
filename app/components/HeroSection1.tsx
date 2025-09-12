@@ -46,7 +46,7 @@ export function HeroSection1() {
       
       {/* Text content */}
       <span className="relative z-10 px-6 py-2 text-3xl font-semibold text-brand md:text-6xl lg:text-[54px]">
-        Trusted Worldwide
+        Trusted By Most Brands
       </span>
     </motion.div>
   </div>
