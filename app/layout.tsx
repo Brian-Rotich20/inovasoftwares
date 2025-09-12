@@ -86,7 +86,7 @@ export default function RootLayout({
             {children}
             <Footer />
             <WhatsAppFloatingButton 
-        phoneNumber="254712345678" // Replace with your actual number
+        phoneNumber="254720060728" // Replace with your actual number
         message="Hi! I'd like to know more about your services."
       />
           </ LoadingProvider>
