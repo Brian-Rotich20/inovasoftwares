@@ -30,6 +30,26 @@ export function HeroSection1() {
               </motion.span>
             ))}
         </h1>
+        <div className="relative z-10 mx-auto mt-6 flex justify-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{
+        duration: 0.5,
+        delay: 0.8, // After main text animation completes
+        ease: "easeOut",
+      }}
+      className="relative"
+    >
+      {/* Skewed rhombus background */}
+      <div className="absolute inset-0 bg-gray-700 transform skew-x-12 rounded-md"></div>
+      
+      {/* Text content */}
+      <span className="relative z-10 px-6 py-2 text-lg font-semibold text-brand md:text-6xl lg:text-[54px]">
+        Trusted Worldwide
+      </span>
+    </motion.div>
+  </div>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
