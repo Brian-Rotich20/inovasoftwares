@@ -45,7 +45,7 @@ export function HeroSection1() {
       <div className="absolute inset-0 bg-gray-700 transform skew-x-12 rounded-md"></div>
       
       {/* Text content */}
-      <span className="relative z-10 px-6 py-2 text-lg font-semibold text-brand md:text-6xl lg:text-[54px]">
+      <span className="relative z-10 px-6 py-2 text-3xl font-semibold text-brand md:text-6xl lg:text-[54px]">
         Trusted Worldwide
       </span>
     </motion.div>
