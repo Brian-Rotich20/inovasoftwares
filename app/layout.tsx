@@ -7,7 +7,7 @@ import localFont from 'next/font/local'
 import { Roboto } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { LoadingProvider } from "./contexts/LoadingContext";
-
+import WhatsAppFloatingButton from "./components/WhatsApp";
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -85,6 +85,10 @@ export default function RootLayout({
             <Navbar />
             {children}
             <Footer />
+            <WhatsAppFloatingButton 
+        phoneNumber="254712345678" // Replace with your actual number
+        message="Hi! I'd like to know more about your services."
+      />
           </ LoadingProvider>
         </ThemeProvider>
       </body>
