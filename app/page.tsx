@@ -3,9 +3,11 @@
 import Head from 'next/head';
 import ServicesSection from './components/ServicesSection';
 import IndustriesWeServe from './components/IndustriesWeServe';
-import { HeroSection1 } from './components/HeroSection1';
 import WhyChooseUs from './components/WhyChooseUs';
 import CustomersSection from './components/Customers';
+import { HeroSection1 } from './components/HeroSection1';
+import PerformanceSection from './components/PerfomanceSection';
+import GlobalSection from './components/GlobalSection';
 
 export default function Home() {
 
@@ -55,6 +57,8 @@ export default function Home() {
         />
       </Head>
       <HeroSection1 />
+      <GlobalSection />
+      <PerformanceSection />
       <ServicesSection />
       <WhyChooseUs />
       <IndustriesWeServe />

@@ -1,113 +1,113 @@
-'use client'
+// components/IndustriesWeServe.tsx
+'use client';
 
-import React from 'react'
+import { motion } from 'motion/react';
 import {
-  Building2,
-  Heart,
-  GraduationCap,
-  Truck,
-  Code,
-  HardHat,
-  ShoppingCart,
-  Plane,
-  Shield,
-  TrendingUp,
-  Film,
-  Trophy
-} from 'lucide-react'
+  Building2, Heart, GraduationCap, Truck, Code, HardHat,
+  ShoppingCart, Plane, Shield, TrendingUp, Film, Trophy,
+  ArrowRight,
+} from 'lucide-react';
 
 const industries = [
-  {
-    title: "Finance & Banking",
-    icon: Building2,
-  },
-  {
-    title: "Healthcare",
-    icon: Heart,
-  },
-  {
-    title: "Education",
-    icon: GraduationCap,
-  },
-  {
-    title: "Transport & Automotive",
-    icon: Truck,
-  },
-  {
-    title: "Technology",
-    icon: Code,
-  },
-  {
-    title: "Construction",
-    icon: HardHat,
-  },
-  {
-    title: "Retail & E-commerce",
-    icon: ShoppingCart,
-  },
-  {
-    title: "Travel & Hospitality",
-    icon: Plane,
-  },
-  {
-    title: "Insurance",
-    icon: Shield,
-  },
-  {
-    title: "Trade",
-    icon: TrendingUp,
-  },
-  {
-    title: "Media & Entertainment",
-    icon: Film,
-  },
-  {
-    title: "Sports",
-    icon: Trophy,
-  }
-]
+  { title: "Finance & Banking", icon: Building2 },
+  { title: "Healthcare", icon: Heart },
+  { title: "Education", icon: GraduationCap },
+  { title: "Transport & Automotive", icon: Truck },
+  { title: "Technology", icon: Code },
+  { title: "Construction", icon: HardHat },
+  { title: "Retail & E-commerce", icon: ShoppingCart },
+  { title: "Travel & Hospitality", icon: Plane },
+  { title: "Insurance", icon: Shield },
+  { title: "Trade", icon: TrendingUp },
+  { title: "Media & Entertainment", icon: Film },
+  { title: "Sports", icon: Trophy },
+];
 
 export default function IndustriesWeServe() {
   return (
-    <section className="py-12 md:py-16 bg-gray-950 text-white">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="text-center mb-10 md:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold mb-3 md:mb-4">
-            Industries We Serve
+    <section className="relative py-24 bg-[#060a06] overflow-hidden">
+
+      {/* Grid */}
+      <div
+        className="absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(74,222,128,1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(74,222,128,1) 1px, transparent 1px)
+          `,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] pointer-events-none"
+        style={{ background: "radial-gradient(ellipse, rgba(34,197,94,0.07) 0%, transparent 70%)" }} />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6">
+
+        {/* Header */}
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-xs uppercase tracking-[0.25em] text-green-500 mb-3 font-medium">Our Reach</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+            Industries We <span className="text-green-400">Serve</span>
           </h2>
-          <p className="text-xs md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-400 text-base max-w-xl leading-relaxed">
             From startups to enterprise, we deliver tailored solutions across diverse industries with cutting-edge technology.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
+        {/* Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
           {industries.map((industry, index) => {
-            const Icon = industry.icon
+            const Icon = industry.icon;
             return (
-              <div
+              <motion.div
                 key={index}
-                className="group flex flex-col items-center p-3 md:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="group flex flex-col items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 p-4 text-center
+                  hover:border-green-500/40 hover:bg-green-500/[0.05] transition-all duration-300 hover:-translate-y-1 cursor-default"
               >
-                <div className="w-6 h-6 md:w-10 md:h-10 mb-2 md:mb-3 p-1.5 md:p-2 bg-gray-500 rounded-lg group-hover:bg-brand transition-colors duration-300 flex items-center justify-center">
-                  <Icon className="w-full h-full text-white" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-800 group-hover:bg-green-500/20 transition-colors duration-300">
+                  <Icon className="h-5 w-5 text-slate-400 group-hover:text-green-400 transition-colors duration-300" />
                 </div>
-                <h3 className="text-white font-medium text-xs md:text-xs text-center leading-tight">
+                <p className="text-xs font-medium text-slate-400 group-hover:text-slate-200 transition-colors duration-300 leading-tight">
                   {industry.title}
-                </h3>
-              </div>
-            )
+                </p>
+              </motion.div>
+            );
           })}
         </div>
 
-        <div className="mt-10 md:mt-12 text-center">
-          <p className="text-sm md:text-base text-slate-300 mb-6 md:mb-8">
-            Don't see your industry? We adapt our expertise to meet unique business needs across all sectors.
-          </p>
-          <button className="bg-amber-100 hover:bg-amber-200 text-amber-800 px-5 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base">
+        {/* CTA */}
+        <motion.div
+          className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl border border-slate-800 bg-slate-900/60 p-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <div>
+            <p className="text-white font-semibold text-lg mb-1">Don't see your industry?</p>
+            <p className="text-slate-400 text-sm">We adapt our expertise to meet unique business needs across all sectors.</p>
+          </div>
+          <button
+            onClick={() => window.location.href = '/contact'}
+            className="group flex items-center gap-2 whitespace-nowrap rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-black hover:bg-green-400 transition-all duration-300 hover:shadow-[0_0_25px_rgba(34,197,94,0.35)] hover:-translate-y-0.5"
+          >
             Discuss Your Project
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
-  )
+  );
 }

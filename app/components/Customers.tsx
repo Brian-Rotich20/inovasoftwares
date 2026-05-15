@@ -1,141 +1,174 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { Star, ArrowRight, Quote } from 'lucide-react'
+// components/CustomersSection.tsx
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'motion/react';
+import { ArrowRight, Quote, Star } from 'lucide-react';
+
+const customerTestimonials = [
+  {
+    company: 'Facols Limited',
+    industry: 'Ecommerce Services',
+    metric: '+40%',
+    metricLabel: 'Efficiency Boost',
+    testimonial:
+      "Inova Softwares transformed our business operations with their custom web application. The booking system they developed streamlined our client appointments and increased our efficiency by 40%. Their team's expertise and dedication to quality is outstanding.",
+    customerProfile: {
+      name: 'Sylus Obol',
+      position: 'Operations Manager',
+      image: '/sylus.jpeg',
+    },
+  },
+  {
+    company: 'Tsavol',
+    industry: 'Printing and Branding',
+    metric: '+60%',
+    metricLabel: 'Sales Increase',
+    testimonial:
+      "Working with Inova Softwares on our website application was an exceptional experience. They delivered a beautiful, user-friendly e-commerce app that exceeded our expectations. Our sales have increased by 60% since launch, and customer engagement has never been higher.",
+    customerProfile: {
+      name: 'Kennedy K',
+      position: 'CEO & Founder',
+      image: '/kennedy.jpeg',
+    },
+  },
+];
 
 export default function CustomersSection() {
-  const customerTestimonials = [
-    {
-      company: 'Facols Limited',
-      industry: 'Ecommerce services',
-      testimonial: "Inova Softwares transformed our business operations with their custom web application. The booking system they developed streamlined our client appointments and increased our efficiency by 40%. Their team's expertise and dedication to quality is outstanding.",
-      customerProfile: {
-        name: 'Sylus Obol',
-        position: 'Operations Manager',
-         image: '/sylus.jpeg'
-      },
-      
-    },
-    {
-      company: 'Tsavol',
-      industry: 'Printing and Branding',
-      testimonial: "Working with Inova Softwares on our website application was an exceptional experience. They delivered a beautiful, user-friendly e-commerce app that exceeded our expectations. Our sales have increased by 60% since launch, and customer engagement has never been higher.",
-      customerProfile: {
-        name: 'Kennedy K',
-        position: 'CEO & Founder',
-        image: '/kennedy.jpeg'
-      },
-    }
-  ]
-
   return (
-    <section className="py-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-amber-100 to-orange-100 rounded-full blur-3xl opacity-30 translate-x-1/2 translate-y-1/2"></div>
-      
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
+    <section className="relative py-24 bg-[#080c08] overflow-hidden">
+
+      {/* Grid */}
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(74,222,128,1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(74,222,128,1) 1px, transparent 1px)
+          `,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Glow */}
+      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] -translate-y-1/2 pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(34,197,94,0.05) 0%, transparent 70%)" }} />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6">
+
         {/* Header */}
         <motion.div
-          className="text-center mb-12"
+          className="mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-            What our customers have to say
-          </h2>
-          <p className="text-base text-gray-600 max-w-2xl mx-auto mb-8">
-            We love our users because they love us. Check out some of the love they've sent our way.
-          </p>
-          
-          <Link
-            href="/customers"
-            className="inline-flex items-center gap-2 bg-gray-950 hover:bg-gray-900/90 text-white px-6 py-3 text-sm font-medium rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-[#0D9488]/25 group"
-          >
-            Read All Customer Stories
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <p className="text-xs uppercase tracking-[0.25em] text-green-500 mb-3 font-medium">Testimonials</p>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+            <div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                What Our <span className="text-green-400">Customers</span><br className="hidden sm:block" /> Have to Say
+              </h2>
+              <p className="text-slate-400 text-base max-w-xl">
+                Real results from real businesses. Here's what our clients say about working with Inova.
+              </p>
+            </div>
+            <Link
+              href="/customers"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-700 bg-transparent px-5 py-2.5 text-sm font-medium text-slate-300 hover:border-green-500/50 hover:text-white transition-all duration-200"
+            >
+              All Stories
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </motion.div>
 
-        {/* Customer Testimonials */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        {/* Cards */}
+        <div className="grid lg:grid-cols-2 gap-6">
           {customerTestimonials.map((customer, index) => (
             <motion.div
               key={customer.company}
-              className="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
+              className="group relative rounded-2xl border border-slate-800 bg-slate-900/60 p-8 hover:border-green-500/30 transition-all duration-300 overflow-hidden"
             >
-              {/* Company Header */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-4">
-                  
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{customer.company}</h3>
-                    <p className="text-xs text-gray-500">{customer.industry}</p>
-                  </div>
+              {/* Hover glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{ background: "radial-gradient(circle at 0% 0%, rgba(34,197,94,0.05), transparent 60%)" }} />
+
+              {/* Top row */}
+              <div className="relative z-10 flex items-start justify-between mb-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{customer.company}</h3>
+                  <p className="text-xs text-slate-500 mt-0.5">{customer.industry}</p>
                 </div>
-                
+                <div className="text-right">
+                  <p className="text-2xl font-bold text-green-400">{customer.metric}</p>
+                  <p className="text-xs text-slate-500">{customer.metricLabel}</p>
+                </div>
               </div>
 
-              {/* Testimonial */}
-              <div className="mb-6">
-                <Quote className="w-6 h-6 text-[#0D9488] mb-3" />
-                <p className="text-sm text-gray-700 leading-relaxed italic">
+              {/* Stars */}
+              <div className="relative z-10 flex gap-1 mb-5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-green-400 text-green-400" />
+                ))}
+              </div>
+
+              {/* Quote */}
+              <div className="relative z-10 mb-8">
+                <Quote className="h-5 w-5 text-green-500/50 mb-3" />
+                <p className="text-slate-300 text-sm leading-relaxed">
                   "{customer.testimonial}"
                 </p>
               </div>
-              {/* Customer Profile */}
-            <div className="flex items-center gap-3 mb-6 p-3 bg-gray-50 rounded-lg">
-                <div className="w-12 h-12 rounded-full overflow-hidden">
-                    <Image
+
+              {/* Profile */}
+              <div className="relative z-10 flex items-center gap-3 pt-6 border-t border-slate-800">
+                <div className="h-10 w-10 rounded-full overflow-hidden border border-slate-700 flex-shrink-0">
+                  <Image
                     src={customer.customerProfile.image}
                     alt={customer.customerProfile.name}
-                    width={48}
-                    height={48}
-                    className="w-full h-full object-cover rounded-full"
-                    />
+                    width={40}
+                    height={40}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <div>
-                    <p className="text-sm font-medium text-gray-900">
-                    {customer.customerProfile.name}
-                    </p>
-                    <p className="text-xs text-gray-600">
-                    {customer.customerProfile.position}
-                    </p>
+                  <p className="text-sm font-medium text-white">{customer.customerProfile.name}</p>
+                  <p className="text-xs text-slate-500">{customer.customerProfile.position} · {customer.company}</p>
                 </div>
-                </div>
-  
-              </motion.div>
-            
+              </div>
+
+              {/* Bottom accent */}
+              <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-green-500/50 transition-all duration-500" />
+            </motion.div>
           ))}
         </div>
 
         {/* Bottom CTA */}
         <motion.div
-          className="text-center mt-12"
+          className="mt-14 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <p className="text-sm text-gray-600 mb-4">
-            Ready to join our satisfied customers?
-          </p>
+          <p className="text-slate-500 text-sm mb-5">Ready to join our satisfied customers?</p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-transparent hover:bg-gray-900 text-gray-900 hover:text-white px-6 py-2 text-sm font-medium rounded-lg border-2 border-gray-900 transition-all duration-200 group"
+            className="group inline-flex items-center gap-2 rounded-full bg-green-500 px-7 py-3 text-sm font-semibold text-black hover:bg-green-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.3)] hover:-translate-y-0.5"
           >
             Start Your Project
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

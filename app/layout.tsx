@@ -6,7 +6,6 @@ import Footer from './components/Footer'
 import localFont from 'next/font/local'
 import { Roboto } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import { LoadingProvider } from "./contexts/LoadingContext";
 import WhatsAppFloatingButton from "./components/WhatsApp";
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -81,7 +80,6 @@ export default function RootLayout({
     <html lang="en" className={`${satoshi.variable} ${geistMono.variable} ${logoFont.variable} ${roboto.variable}`}>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <LoadingProvider>
             <Navbar />
             {children}
             <Footer />
@@ -89,7 +87,6 @@ export default function RootLayout({
         phoneNumber="254720060728" // Replace with your actual number
         message="Hi! I'd like to know more about your services."
       />
-          </ LoadingProvider>
         </ThemeProvider>
       </body>
     </html>
