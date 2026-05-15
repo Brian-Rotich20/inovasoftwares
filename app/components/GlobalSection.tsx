@@ -5,12 +5,7 @@ import { motion } from 'motion/react';
 import { Globe, MapPin, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-const regions = [
-  { name: 'East Africa', countries: 'Kenya · Uganda · Tanzania · Rwanda', projects: 38, primary: true },
-  { name: 'West Africa', countries: 'Nigeria · Ghana · Côte d\'Ivoire', projects: 11, primary: false },
-  { name: 'Europe', countries: 'UK · Germany · Netherlands', projects: 7, primary: false },
-  { name: 'North America', countries: 'USA · Canada', projects: 5, primary: false },
-];
+
 
 const dots = [
   // East Africa cluster (primary)
@@ -253,34 +248,7 @@ export default function GlobalSection() {
           ))}
         </div>
 
-        {/* Region cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {regions.map((r, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              viewport={{ once: true }}
-              className={`group rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 overflow-hidden relative
-                ${r.primary
-                  ? 'border-green-500/40 bg-green-500/[0.07] hover:border-green-400/60'
-                  : 'border-slate-800 bg-slate-900/60 hover:border-slate-700'
-                }`}
-            >
-              {r.primary && (
-                <span className="absolute top-3 right-3 text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-medium">Primary</span>
-              )}
-              <p className="font-semibold text-white mb-1">{r.name}</p>
-              <p className="text-xs text-slate-500 mb-4 leading-relaxed">{r.countries}</p>
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-green-400">{r.projects}</span>
-                <span className="text-xs text-slate-600">projects</span>
-              </div>
-              <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-green-500/50" />
-            </motion.div>
-          ))}
-        </div>
+
 
         {/* Bottom CTA */}
         <motion.div
