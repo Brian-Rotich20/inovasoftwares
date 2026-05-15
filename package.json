@@ -10,7 +10,6 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "@next/swc-win32-x64-msvc": "^16.0.2",
     "@tabler/icons-react": "^3.34.1",
     "clsx": "^2.1.1",
     "cobe": "^0.6.4",
