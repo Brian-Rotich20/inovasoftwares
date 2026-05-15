@@ -39,15 +39,15 @@ export function HeroSection1() {
         style={{ background: "radial-gradient(circle at bottom-right, #15803d, transparent 60%)" }} />
 
       {/* Floating badge */}
-      {/* <motion.div
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="relative z-10 mb-8 inline-flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-1.5 text-sm text-green-400 backdrop-blur-sm"
       >
         <Zap className="h-3.5 w-3.5 fill-green-400" />
-        <span className="font-medium tracking-wide">Nairobi's Leading Software Studio</span>
-      </motion.div> */}
+        <span className="font-medium tracking-wide">Nairobi's Leading Software Company</span>
+      </motion.div>
 
       {/* Main headline */}
       <div className="relative z-10 px-4 text-center max-w-5xl mx-auto">
