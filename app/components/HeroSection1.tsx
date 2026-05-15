@@ -45,7 +45,7 @@ export function HeroSection1() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="relative z-10 mb-8 inline-flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-1.5 text-sm text-green-400 backdrop-blur-sm"
       >
-        <Zap className="h-3.5 w-3.5 fill-green-400" />
+        
         <span className="font-medium tracking-wide"></span>
       </motion.div>
 
