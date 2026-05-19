@@ -204,7 +204,7 @@ export function HeroSection1() {
       >
         <p className="text-xs uppercase tracking-[0.2em] text-slate-600 mb-6">Trusted by businesses across Kenya</p>
         <div className="flex flex-wrap items-center justify-center gap-8">
-          {["Facols", "Tsavol", "Startups", "SMEs", "Enterprises"].map((name, i) => (
+          {["Tsavol", "Facols", "Heart-Beat Consulting", "Close", "Enterprises"].map((name, i) => (
             <span key={i} className="text-slate-600 font-semibold text-sm tracking-wide hover:text-slate-400 transition-colors cursor-default">
               {name}
             </span>
